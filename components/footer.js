@@ -21,7 +21,7 @@ export default function Footer() {
             icon={faLinkedin}
           />
         </a>
-        <a href="../CV.pdf" target="blank">
+        <a href="../CV.pdf" target="blank" title="My resume">
           <FontAwesomeIcon
             className="hover:text-gray-500 dark:hover:text-gray-300 h-8 w-8 mr-5 mb-2"
             icon={faPortrait}
