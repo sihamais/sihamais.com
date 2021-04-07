@@ -3,10 +3,10 @@ export default function Contact() {
     <div
       id="contact"
       className="w-screen lg:min-h-screen md:h-auto px-4 lg:px-8 py-10
-      grid md:grid-cols-2 content-center gap-x-8 gap-y-10 
+      grid content-center gap-x-8 gap-y-10 
       bg-gray-100 dark:bg-gray-700"
     >
-      <div className="md:col-span-1">
+      <div className="lg:w-1/2 w-4/5 m-auto content-center">
         <div className="px-4 text-center sm:px-0 mb-4">
           <h3 className="mt-2 text-2xl leading-8 mb-2 font-extrabold tracking-tight text-gray-900 dark:text-white">
             Contact me
@@ -102,7 +102,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      <div className="md:col-span-1">
+      {/* <div className="md:col-span-1">
         <div className="px-4 text-center sm:px-0 mb-6">
           <h3 className="mt-2 text-2xl leading-8 mb-2 font-extrabold tracking-tight text-gray-900 dark:text-white">
             Leave a comment
@@ -180,8 +180,8 @@ export default function Contact() {
               </div>
             </div>
           </form>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 }

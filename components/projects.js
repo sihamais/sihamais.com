@@ -10,6 +10,7 @@ import {
   faRust,
 } from "@fortawesome/free-brands-svg-icons";
 
+
 const ProjectsList = [
   {
     projectName: "Valframe",
@@ -151,7 +152,7 @@ function ProjectsRender(props) {
             />
           </a>
         </div>
-        <dd className="mt-2 text-base text-gray-500 dark:text-gray-400" style={{whiteSpace:"pre-wrap"}}>
+        <dd className="mt-2 text-base text-gray-500 dark:text-gray-400 whitespace-pre-wrap">
           <p>{props.project.projectDescription}</p>
         </dd>
       </div>
@@ -186,16 +187,16 @@ export default function Projects() {
       id="projects"
       className="w-screen lg:min-h-screen h-auto 
       bg-white content-center justify-center grid
-      dark:bg-gray-800"
+      dark:bg-gray-800 py-10"
     >
       <div className="h-full px-4 py-10 sm:px-6 lg:px-8 content-center space-y-10">
         <div className="lg:text-center pl-8">
-          <h2 className="text-xl text-indigo-600 dark:text-indigo-500 font-bold tracking-wide uppercase">
-            Projects
-          </h2>
+            <h2 className="text-xl text-indigo-600 dark:text-indigo-500 font-bold tracking-wide uppercase">
+              Projects
+            </h2>
         </div>
         <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-10">
+          <dl className="space-y-20 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16">
             {ProjectsList.map((project) => (
               <ProjectsRender key={project.projectName} project={project} />
             ))}
