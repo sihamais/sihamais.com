@@ -1,10 +1,6 @@
 import FadeIn from "react-fade-in";
 import { useState, useEffect } from "react";
 
-function Sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export default function About() {
   const [slides] = useState([
     {
@@ -12,28 +8,30 @@ export default function About() {
       pic: "../1-portfolio.svg",
       text: "Welcome to my portfolio !",
     },
-    { id: 1, pic: "../3-tasks.svg", text: "Some stuff" },
-    { id: 2, pic: "../5-resume.svg", text: "Check out my resume" },
+    { id: 1, pic: "../2-programmer.svg", text: "My name is Siham and I'm a software developper.\n I spend most of my time on my computer learning new technologies and working on new projects." },
+    { id: 2, pic: "../3-tasks.svg", text: "some stuff" },
+    { id: 3, pic: "../4-career.svg", text: "Check out my resume" },
+    { id: 4, pic: "../5-universe.svg", text: "Sometimes I find myself dreaming about spacial exploration" },
+    { id: 5, pic: "../6-resume.svg", text: "Check out my resume here" },
+    { id: 6, pic: "../7-mail.svg", text: "Get in touch here" },
   ]);
 
   let [currentPosition, setCurrentPosition] = useState(0); // Initial slide index value
   let currentSlide = slides[currentPosition]; // variable index value we can reference later
 
   useEffect(() => {
-    console.log(currentSlide);
-  });
-
-  function SlideTimer() {
-    while (true) {
-      Sleep(30000);
+    let interval = null;
+    interval = setInterval(() => {
       if (currentPosition == slides.length - 1) {
-        setCurrentPosition((currentPosition = 0));
+        clearInterval(interval);
       } else {
         setCurrentPosition(currentPosition + 1);
       }
       currentSlide = slides[currentPosition];
-    }
-  }
+    }, 5000);
+    return () => clearInterval(interval);
+  });
+
 
   function BtnClick(id) {
     setCurrentPosition((currentPosition = id));
@@ -56,16 +54,16 @@ export default function About() {
     <div
       id="about"
       className="w-screen lg:min-h-screen h-auto grid content-center justify-center
-      bg-white md:py-20 px-4 sm:px-6 lg:px-8 pt-20 py-10
+      bg-white md:py-20 md:pt-30 px-4 sm:px-6 lg:px-8 pt-20 py-10
       dark:bg-gray-800"
     >
-      <div className="h-auto space-y-4 py-4 lg:px-12 sm:px-6 content-center">
+      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center">
         <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200">
           <img
             src={currentSlide.pic}
-            className="lg:w-5/12 w-11/12 md:w-7/12  justify-self-center"
+            className="sm:h-md h-sm md:h-lg justify-self-center"
           ></img>
-          <h3 className="px-4 text-xl text-center m-auto font-bold text-gray-800 dark:text-gray-100 uppercase whitespace-pre-wrap">
+          <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-gray-100 uppercase whitespace-pre-wrap">
             {currentSlide.text}
           </h3>
         </div>

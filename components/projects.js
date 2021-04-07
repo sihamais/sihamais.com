@@ -139,7 +139,7 @@ function ProjectsRender(props) {
             {props.project.projectName}
           </dt>
           <a
-            href={props.project.projectLink}
+            href={"https://"+props.project.projectLink}
             className="text-blue-500 hover:underline"
             target="blank"
           >
