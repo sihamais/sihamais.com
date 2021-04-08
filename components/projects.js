@@ -191,9 +191,9 @@ export default function Projects() {
     >
       <div className="h-full px-4 py-10 sm:px-6 lg:px-8 content-center space-y-10">
         <div className="lg:text-center pl-8">
-            <h2 className="text-xl text-indigo-600 dark:text-indigo-500 font-bold tracking-wide uppercase">
-              Projects
-            </h2>
+          <h2 className="text-xl text-gray-900 dark:text-white font-bold tracking-wide uppercase">
+            Projects
+          </h2>
         </div>
         <div className="mt-10">
           <dl className="space-y-20 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16">

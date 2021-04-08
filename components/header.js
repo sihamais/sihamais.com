@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import { Link, animateScroll as scroll } from "react-scroll";
+import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
 
 let dark = false;
 
@@ -27,22 +28,38 @@ export default function Header() {
             </Link>
           </div>
           <div className="md:block hidden flex space-x-4 px-6">
-            <Link href="/#about">
+            <Link
+              href="/#about"
+              to="about"
+              smooth={true}
+            >
               <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 About
               </a>
             </Link>
-            <Link href="/#skills">
+            <Link
+              href="/#skills"
+              to="skills"
+              smooth={true}
+            >
               <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Skills
               </a>
             </Link>
-            <Link href="/#projects">
+            <Link
+              href="/#projects"
+              to="projects"
+              smooth={true}
+            >
               <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Projects
               </a>
             </Link>
-            <Link href="/#contact">
+            <Link
+              href="/#contact"
+              to="contact"
+              smooth={true}
+            >
               <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </a>

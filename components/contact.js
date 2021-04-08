@@ -6,12 +6,12 @@ export default function Contact() {
       grid content-center gap-x-8 gap-y-10 
       bg-gray-100 dark:bg-gray-700"
     >
-      <div className="lg:w-1/2 w-4/5 m-auto content-center">
-        <div className="px-4 text-center sm:px-0 mb-4">
-          <h3 className="mt-2 text-2xl leading-8 mb-2 font-extrabold tracking-tight text-gray-900 dark:text-white">
+      <div className="lg:w-1/2 w-9/10 m-auto content-center">
+        <div className="px-4 lg:text-center sm:px-0 mb-4">
+          <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-tight text-gray-900 dark:text-white uppercase">
             Contact me
           </h3>
-          <p className="mt-1 text-lg text-gray-500 lg:mx-auto dark:text-gray-400">
+          <p className="mt-1 text-lg text-center text-gray-500 lg:mx-auto dark:text-gray-400">
             Use a permanent address where you can receive mail.
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function Contact() {
                       name="first_name"
                       id="first_name"
                       autocomplete="given-name"
-                      className="mt-1 ring-2 ring-gray-300 dark:ring-gray-600 py-0.5 block w-full
+                      className="mt-1 border-2 border-gray-300 dark:border-gray-600 py-0.5 block w-full
                        bg-gray-100 dark:bg-gray-700 shadow-sm px-1 sm:text-sm rounded-md"
                     />
                   </div>
@@ -49,7 +49,7 @@ export default function Contact() {
                       name="last_name"
                       id="last_name"
                       autocomplete="family-name"
-                      className="mt-1 ring-2 ring-gray-300 dark:ring-gray-600 py-0.5 px-1 block 
+                      className="mt-1 border-2 border-gray-300 dark:border-gray-600 py-0.5 px-1 block 
                       dark:bg-gray-700 bg-gray-100 w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                     name="email_address"
                     id="email_address"
                     autocomplete="email"
-                    className="mt-1 px-1 py-0.5 ring-2 ring-gray-300 dark:ring-gray-600 block w-full
+                    className="mt-1 px-1 py-0.5 border-2 border-gray-300 dark:border-gray-600 block w-full
                      dark:bg-gray-700 bg-gray-100 shadow-sm sm:text-sm rounded-md"
                   />
                 </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                       id="about"
                       name="about"
                       rows="3"
-                      className="shadow-sm ring-2 ring-gray-300 dark:ring-gray-600 p-2 mt-1 
+                      className="shadow-sm border-2 border-gray-300 dark:border-gray-600 p-2 mt-1 
                       dark:bg-gray-700 bg-gray-100 block w-full sm:text-sm rounded-md"
                     ></textarea>
                   </div>

@@ -1,4 +1,3 @@
-import FadeIn from "react-fade-in";
 import { useState, useEffect } from "react";
 
 export default function About() {
@@ -6,14 +5,36 @@ export default function About() {
     {
       id: 0,
       pic: "../1-portfolio.svg",
-      text: "Welcome to my portfolio !",
+      text: "Hey there ! I'm Siham\nWelcome to my portfolio !",
     },
-    { id: 1, pic: "../2-programmer.svg", text: "My name is Siham and I'm a software developper.\n I spend most of my time on my computer learning new technologies and working on new projects." },
-    { id: 2, pic: "../3-tasks.svg", text: "some stuff" },
-    { id: 3, pic: "../4-career.svg", text: "Check out my resume" },
-    { id: 4, pic: "../5-universe.svg", text: "Sometimes I find myself dreaming about spacial exploration" },
-    { id: 5, pic: "../6-resume.svg", text: "Check out my resume here" },
-    { id: 6, pic: "../7-mail.svg", text: "Get in touch here" },
+    {
+      id: 1,
+      pic: "../2-programmer.svg",
+      text:
+        "I'm a software developper\nI spend most of my time on my computer learning new technologies and working on new projects",
+    },
+    {
+      id: 2,
+      pic: "../3-tasks.svg",
+      text: "I always fix myself goals to get where I want to be later",
+    },
+    {
+      id: 3,
+      pic: "../4-career.svg",
+      text: "I take my work very seriously and enjoy every step of it",
+    },
+    {
+      id: 4,
+      pic: "../5-universe.svg",
+      text:
+        "Sometimes I find myself dreaming about spacial exploration\nI wonder what it would be like working in this field",
+    },
+    {
+      id: 5,
+      pic: "../6-resume.svg",
+      text: "Check out my resume or scroll down to learn more about me",
+    },
+    { id: 6, pic: "../7-mail.svg", text: "Get in touch if you want to talk" },
   ]);
 
   let [currentPosition, setCurrentPosition] = useState(0); // Initial slide index value
@@ -28,10 +49,9 @@ export default function About() {
         setCurrentPosition(currentPosition + 1);
       }
       currentSlide = slides[currentPosition];
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   });
-
 
   function BtnClick(id) {
     setCurrentPosition((currentPosition = id));
@@ -58,14 +78,24 @@ export default function About() {
       dark:bg-gray-800"
     >
       <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center">
-        <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200">
+        <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200 transition ease-in-out">
           <img
             src={currentSlide.pic}
             className="sm:h-md h-sm md:h-lg justify-self-center"
           ></img>
-          <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-gray-100 uppercase whitespace-pre-wrap">
-            {currentSlide.text}
-          </h3>
+          {currentPosition == 5 && (
+            <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
+              <a href="../CV.pdf" target="blank" title="My resume" className="hover:text-indigo-600">
+                Check out my resume
+              </a>{" "}
+              <br></br>or<br></br>scroll down to learn more about me
+            </h3>
+          )}
+          {currentPosition != 5 && (
+            <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
+              {currentSlide.text}
+            </h3>
+          )}
         </div>
         <div className="flex space-x-2 justify-center">
           {slides.map((slide) => (
