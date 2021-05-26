@@ -44,10 +44,10 @@ const ProjectsList = [
     projectName: "Strugl",
     projectLogo: "../strugl.svg",
     hasBg: true,
-    projectLink: "stru.gl",
+    projectLink: "strugl.cc",
     projectDescription:
       "A decentralized social network powered by the IOTA Tangle.\nStrugglig to find a decentralized social network in which you can say whatever crap crosses your mind? Struggle no more ! With Strugl you can be whoever you want to be.",
-    projectGithubLink: "https://github.com/sihamais/strugl",
+    projectGithubLink: "https://github.com/pacokleitz/strugl",
     projectTechs: [
       {
         techName: "React",
