@@ -55,6 +55,11 @@ const ProjectsList = [
         techColor: "text-blue-400",
         isFA: true,
       },
+      {
+        techName: "GO",
+        techLogo: "go.svg",
+        isFA: false,
+      },
     ],
   },
   {

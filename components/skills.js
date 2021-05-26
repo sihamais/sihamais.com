@@ -1,5 +1,36 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCuttlefish } from "@fortawesome/free-brands-svg-icons";
+const techSkillsList = [
+  {
+    directoryName: "Developement",
+    subdirectories: [
+      "C",
+      "Python",
+      "Typescript",
+      "Javascript",
+      "HTML 5",
+      "CSS 3 / SASS",
+      "PostgreSQL",
+    ],
+  },
+  {
+    directoryName: "Frameworks",
+    subdirectories: [
+      "Angular 10",
+      "React / Next.js",
+      "Node.js / Express.js",
+      "Bootstrap / Tailwind",
+    ],
+  },
+  {
+    directoryName: "Tools",
+    subdirectories: [
+      "Git",
+      "Docker",
+      "Visual Studio Code",
+      "Word",
+      "Excel",
+    ],
+  },
+];
 
 export default function Skills() {
   return (
