@@ -35,7 +35,7 @@ export default function Contact() {
                       type="text"
                       name="first_name"
                       id="first_name"
-                      autocomplete="given-name"
+                      autoComplete="given-name"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
@@ -53,7 +53,7 @@ export default function Contact() {
                       type="text"
                       name="last_name"
                       id="last_name"
-                      autocomplete="family-name"
+                      autoComplete="family-name"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
@@ -71,7 +71,7 @@ export default function Contact() {
                     type="text"
                     name="email_address"
                     id="email_address"
-                    autocomplete="email"
+                    autoComplete="email"
                     className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
@@ -135,7 +135,7 @@ export default function Contact() {
                       type="text"
                       name="first_name"
                       id="first_name"
-                      autocomplete="given-name"
+                      autoComplete="given-name"
                       className="mt-1 px-1 py-0.5 block ring-2 ring-gray-300 dark:ring-gray-600
                       dark:bg-gray-700 bg-gray-100 w-full sm:text-sm rounded-md"
                     />
@@ -152,7 +152,7 @@ export default function Contact() {
                       type="text"
                       name="last_name"
                       id="last_name"
-                      autocomplete="family-name"
+                      autoComplete="family-name"
                       className="mt-1 ring-2 ring-gray-300 dark:ring-gray-600 px-1 py-0.5 block 
                       dark:bg-gray-700 bg-gray-100 w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                     />

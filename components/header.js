@@ -21,46 +21,30 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex flex-wrap h-auto py-3 items-center justify-around">
           <div className="lg:w-auto lg:static lg:block">
-            <Link href="/">
-              <a className="text-md font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-gray-900 dark:text-white">
+            <Link href="/#about" to="about" smooth={true}>
+              <a className="cursor-pointer text-md font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-gray-900 dark:text-white">
                 Sihamais.com
               </a>
             </Link>
           </div>
           <div className="md:block hidden flex space-x-4 px-6">
-            <Link
-              href="/#about"
-              to="about"
-              smooth={true}
-            >
-              <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/#about" to="about" smooth={true}>
+              <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 About
               </a>
             </Link>
-            <Link
-              href="/#skills"
-              to="skills"
-              smooth={true}
-            >
-              <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/#skills" to="skills" smooth={true}>
+              <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Skills
               </a>
             </Link>
-            <Link
-              href="/#projects"
-              to="projects"
-              smooth={true}
-            >
-              <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/#projects" to="projects" smooth={true}>
+              <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Projects
               </a>
             </Link>
-            <Link
-              href="/#contact"
-              to="contact"
-              smooth={true}
-            >
-              <a className="text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/#contact" to="contact" smooth={true}>
+              <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </a>
             </Link>
