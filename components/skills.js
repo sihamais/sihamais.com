@@ -39,7 +39,7 @@ const skillsList = [
 function SubdirectoryRender(props) {
   return (
     <div className="flex">
-      <li className="text-center text-lg text-gray-800 dark:text-gray-200">
+      <li className="text-center text-lg text-gray-600 dark:text-gray-300">
         {props.sub}
       </li>
     </div>
