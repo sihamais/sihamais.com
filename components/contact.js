@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="px-4 lg:text-center sm:px-0 mb-4">
           <div className="flex">
             <div className="h-1 w-1/5 bg-gradient-to-l from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
-            <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-tight text-gray-900 dark:text-white uppercase">
+            <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-wide text-gray-900 dark:text-white uppercase">
               Contact me
             </h3>
             <div className="h-1 w-1/5 bg-gradient-to-r from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
