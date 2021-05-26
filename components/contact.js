@@ -8,9 +8,13 @@ export default function Contact() {
     >
       <div className="lg:w-1/2 w-9/10 m-auto content-center">
         <div className="px-4 lg:text-center sm:px-0 mb-4">
-          <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-tight text-gray-900 dark:text-white uppercase">
-            Contact me
-          </h3>
+          <div className="flex">
+            <div className="h-1 w-1/5 bg-gradient-to-l from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
+            <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-tight text-gray-900 dark:text-white uppercase">
+              Contact me
+            </h3>
+            <div className="h-1 w-1/5 bg-gradient-to-r from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
+          </div>
           <p className="mt-1 text-lg text-center text-gray-500 lg:mx-auto dark:text-gray-400">
             Use a permanent address where you can receive mail.
           </p>
@@ -32,8 +36,9 @@ export default function Contact() {
                       name="first_name"
                       id="first_name"
                       autocomplete="given-name"
-                      className="mt-1 border-2 border-gray-300 dark:border-gray-600 py-0.5 block w-full
-                       bg-gray-100 dark:bg-gray-700 shadow-sm px-1 sm:text-sm rounded-md"
+                      className="mt-1 border border-transparent focus:outline-none focus:ring-2 
+                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                       bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -49,8 +54,9 @@ export default function Contact() {
                       name="last_name"
                       id="last_name"
                       autocomplete="family-name"
-                      className="mt-1 border-2 border-gray-300 dark:border-gray-600 py-0.5 px-1 block 
-                      dark:bg-gray-700 bg-gray-100 w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 border border-transparent focus:outline-none focus:ring-2 
+                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                       bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     />
                   </div>
                 </div>
@@ -66,8 +72,9 @@ export default function Contact() {
                     name="email_address"
                     id="email_address"
                     autocomplete="email"
-                    className="mt-1 px-1 py-0.5 border-2 border-gray-300 dark:border-gray-600 block w-full
-                     dark:bg-gray-700 bg-gray-100 shadow-sm sm:text-sm rounded-md"
+                    className="mt-1 border border-transparent focus:outline-none focus:ring-2 
+                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                       bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                   />
                 </div>
                 <div>
@@ -82,8 +89,9 @@ export default function Contact() {
                       id="about"
                       name="about"
                       rows="3"
-                      className="shadow-sm border-2 border-gray-300 dark:border-gray-600 p-2 mt-1 
-                      dark:bg-gray-700 bg-gray-100 block w-full sm:text-sm rounded-md"
+                      className="mt-1 border border-transparent focus:outline-none focus:ring-2 
+                      focus:ring-purple-600 focus:border-transparent p-2 block w-full h-1/2
+                       bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     ></textarea>
                   </div>
                 </div>
@@ -91,8 +99,8 @@ export default function Contact() {
                   <button
                     type="submit"
                     className="inline-flex justify-center py-2 px-4 
-                    shadow-sm text-sm font-medium rounded-md dark:text-white text-gray-800
-                    focus:outline-none ring-2 ring-indigo-500 hover:bg-indigo-500 dark:ring-indigo-700 dark:hover:bg-indigo-700"
+                    shadow-md text-sm font-medium rounded-md text-white
+                    bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50"
                   >
                     Send
                   </button>

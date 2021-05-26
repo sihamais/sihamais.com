@@ -46,7 +46,7 @@ const ProjectsList = [
     hasBg: true,
     projectLink: "strugl.cc",
     projectDescription:
-      "A decentralized social network powered by the IOTA Tangle.\nStrugglig to find a decentralized social network in which you can say whatever crap crosses your mind? Struggle no more ! With Strugl you can be whoever you want to be.",
+      "A decentralized social network powered by the IOTA Tangle.\nStrugglig to find a decentralized social network in which you can say whatever crap crosses your mind? Struggle no more ! With Strugl you can be whoever you want.",
     projectGithubLink: "https://github.com/pacokleitz/strugl",
     projectTechs: [
       {
@@ -195,10 +195,12 @@ export default function Projects() {
       dark:bg-gray-800 py-10"
     >
       <div className="h-full px-4 py-10 sm:px-6 lg:px-8 content-center space-y-10">
-        <div className="lg:text-center pl-8">
+        <div className="lg:text-center pl-8 flex">
+          <div className="h-1 w-1/5 bg-gradient-to-l from-green-600 to-green-400 m-auto dark:bg-gray-50 rounded-full"></div>
           <h2 className="text-xl text-gray-900 dark:text-white font-bold tracking-wide uppercase">
             Projects
           </h2>
+          <div className="h-1 w-1/5 bg-gradient-to-r from-green-600 to-green-400 m-auto dark:bg-gray-50 rounded-full"></div>
         </div>
         <div className="mt-10">
           <dl className="space-y-20 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16">

@@ -85,7 +85,12 @@ export default function About() {
           ></img>
           {currentPosition == 5 && (
             <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
-              <a href="../CV.pdf" target="blank" title="My resume" className="hover:text-indigo-600">
+              <a
+                href="../CV.pdf"
+                target="blank"
+                title="My resume"
+                className="text-indigo-600 hover:text-indigo-500"
+              >
                 Check out my resume
               </a>{" "}
               <br></br>or<br></br>scroll down to learn more about me
