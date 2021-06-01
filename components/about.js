@@ -27,7 +27,7 @@ export default function About() {
       id: 4,
       pic: "../5-universe.svg",
       text:
-        "Sometimes I find myself dreaming about spacial exploration\nI wonder what it would be like working in this field",
+        "Armed with my logical reasoning and my creativity, I solve the problems I encounter on a daily basis",
     },
     {
       id: 5,

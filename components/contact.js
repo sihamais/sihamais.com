@@ -9,11 +9,11 @@ export default function Contact() {
       <div className="lg:w-1/2 w-9/10 m-auto content-center">
         <div className="px-4 lg:text-center sm:px-0 mb-4">
           <div className="flex">
-            <div className="h-1 w-1/5 bg-gradient-to-l from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
+            <div className="h-1 w-1/4 bg-gradient-to-l from-indigo-500 to-pink-400 m-auto dark:bg-gray-50 rounded-full"></div>
             <h3 className="mt-2 text-xl leading-8 mb-2 font-bold tracking-wide text-gray-900 dark:text-white uppercase">
               Contact me
             </h3>
-            <div className="h-1 w-1/5 bg-gradient-to-r from-indigo-600 to-blue-400 m-auto dark:bg-gray-50 rounded-full"></div>
+            <div className="h-1 w-1/4 bg-gradient-to-r from-indigo-500 to-pink-400 m-auto dark:bg-gray-50 rounded-full"></div>
           </div>
           <p className="mt-1 text-lg text-center text-gray-500 lg:mx-auto dark:text-gray-400">
             Use a permanent address where you can receive mail.
@@ -37,14 +37,14 @@ export default function Contact() {
                       id="first_name"
                       autoComplete="given-name"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
-                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                      focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     />
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="last_name"
+                      htmlFor="last_name"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                     >
                       Last name
@@ -55,14 +55,14 @@ export default function Contact() {
                       id="last_name"
                       autoComplete="family-name"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
-                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                      focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     />
                   </div>
                 </div>
                 <div className="col-span-6 sm:col-span-4">
                   <label
-                    for="email_address"
+                    htmlFor="email_address"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                   >
                     Email address
@@ -73,13 +73,13 @@ export default function Contact() {
                     id="email_address"
                     autoComplete="email"
                     className="mt-1 border border-transparent focus:outline-none focus:ring-2 
-                      focus:ring-purple-600 focus:border-transparent py-3 block w-full h-1/2
+                      focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                   />
                 </div>
                 <div>
                   <label
-                    for="about"
+                    htmlFor="about"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-50"
                   >
                     Message
@@ -90,7 +90,7 @@ export default function Contact() {
                       name="about"
                       rows="3"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
-                      focus:ring-purple-600 focus:border-transparent p-2 block w-full h-1/2
+                      focus:ring-indigo-600 focus:border-transparent p-2 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
                     ></textarea>
                   </div>
