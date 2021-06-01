@@ -1,3 +1,26 @@
+import emailjs from "emailjs-com";
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_9kfxv9l",
+      "template_bfokfbk",
+      e.target,
+      "user_H3LN1BxuZvQeFF2kKgF0K"
+    )
+    .then(
+      (result) => {
+        alert("Message sent successfully !");
+        e.target.reset();
+      },
+      (error) => {
+        alert(error.text);
+      }
+    );
+}
+
 export default function Contact() {
   return (
     <div
@@ -20,7 +43,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="mt-5 md:mt-0 md:col-span-2">
-          <form action="#" method="POST">
+          <form id="contactForm" onSubmit={sendEmail}>
             <div className="overflow-hidden rounded-md">
               <div className="p-6 bg-gray-100 dark:bg-gray-700 dark:text-gray-50 space-y-3">
                 <div className="grid grid-cols-6 gap-x-6 gap-y-2 ">
@@ -39,6 +62,7 @@ export default function Contact() {
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
+                       required
                     />
                   </div>
 
@@ -57,6 +81,7 @@ export default function Contact() {
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
+                       required
                     />
                   </div>
                 </div>
@@ -68,18 +93,19 @@ export default function Contact() {
                     Email address
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     name="email_address"
                     id="email_address"
                     autoComplete="email"
                     className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-indigo-600 focus:border-transparent py-3 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
+                       required
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="about"
+                    htmlFor="message"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-50"
                   >
                     Message
@@ -87,11 +113,12 @@ export default function Contact() {
                   <div className="mt-1">
                     <textarea
                       id="about"
-                      name="about"
+                      name="message"
                       rows="3"
                       className="mt-1 border border-transparent focus:outline-none focus:ring-2 
                       focus:ring-indigo-600 focus:border-transparent p-2 block w-full h-1/2
                        bg-white dark:bg-gray-800 shadow-md px-1 sm:text-sm rounded-md"
+                       required
                     ></textarea>
                   </div>
                 </div>
