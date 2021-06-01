@@ -72,7 +72,7 @@ const ProjectsList = [
     hasBg: true,
     projectLink: "strugl.cc",
     projectDescription:
-      "A decentralized social network powered by the IOTA Tangle.\nStrugglig to find a decentralized social network in which you can say whatever crap crosses your mind? Struggle no more ! With Strugl you can be whoever you want.",
+      "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crosses your mind? Struggle no more ! With Strugl you can be whoever you want.",
     projectGithubLink: "https://github.com/pacokleitz/strugl",
     projectTechs: [
       {
