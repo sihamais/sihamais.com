@@ -55,7 +55,7 @@ const ProjectsList = [
     projectGithubLink: "https://github.com/sihamais/TheBank",
     projectTechs: [
       {
-        techName: "QT",
+        techName: "Qt",
         techLogo: "qt.svg",
         isFA: false,
       },
