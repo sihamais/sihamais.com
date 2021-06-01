@@ -1,41 +1,9 @@
 import { useState, useEffect } from "react";
+import en from "../public/translations/en.json";
+import { t, translate } from "react-switch-lang";
 
 export default function About() {
-  const [slides] = useState([
-    {
-      id: 0,
-      pic: "../1-portfolio.svg",
-      text: "Hey there ! I'm Siham\nWelcome to my portfolio !",
-    },
-    {
-      id: 1,
-      pic: "../2-programmer.svg",
-      text:
-        "I'm a software developper\nI spend most of my time on my computer learning new technologies and working on new projects",
-    },
-    {
-      id: 2,
-      pic: "../3-tasks.svg",
-      text: "I always fix myself goals to get where I want to be later",
-    },
-    {
-      id: 3,
-      pic: "../4-career.svg",
-      text: "I take my work very seriously and enjoy every step of it",
-    },
-    {
-      id: 4,
-      pic: "../5-universe.svg",
-      text:
-        "Armed with my logical reasoning and my creativity, I solve the problems I encounter on a daily basis",
-    },
-    {
-      id: 5,
-      pic: "../6-resume.svg",
-      text: "Check out my resume or scroll down to learn more about me",
-    },
-    { id: 6, pic: "../7-mail.svg", text: "Get in touch if you want to talk" },
-  ]);
+  const [slides] = useState(en.about);
 
   let [currentPosition, setCurrentPosition] = useState(0); // Initial slide index value
   let currentSlide = slides[currentPosition]; // variable index value we can reference later
@@ -98,7 +66,7 @@ export default function About() {
           )}
           {currentPosition != 5 && (
             <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
-              {currentSlide.text}
+              {t(currentSlide.text)}
             </h3>
           )}
         </div>

@@ -6,6 +6,21 @@ import Projects from "../components/projects";
 import Footer from "../components/footer";
 import Contact from "../components/contact";
 
+import en from '../public/translations/en.json'
+import fr from '../public/translations/fr.json'
+
+import {
+  setTranslations,
+  setDefaultLanguage,
+  setLanguageCookie,
+  setLanguage,
+  translate,
+} from "react-switch-lang";
+
+setTranslations({ en, fr });
+setDefaultLanguage("en");
+setLanguageCookie();
+
 export default function Home() {
   return (
     <div>

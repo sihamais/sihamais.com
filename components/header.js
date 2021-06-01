@@ -1,6 +1,12 @@
 import styles from "../styles/Home.module.css";
+import { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
+import {
+  getLanguage,
+  setLanguage,
+  t, translate
+} from "react-switch-lang";
 
 let dark = false;
 
@@ -16,6 +22,20 @@ function darkMode() {
 }
 
 export default function Header() {
+  const [langs] = useState(["../img/french.png","../img/english.png"]);
+
+  let [currentLang, setCurrentLang] = useState(1); // Initial slide index value
+
+  function switchLang() {
+    if (getLanguage() == "en") {
+      setLanguage("fr");
+      setCurrentLang((currentLang = 0));
+    } else {
+      setLanguage("en");
+      setCurrentLang((currentLang = 1));
+    }
+  }
+
   return (
     <nav className="bg-white fixed w-screen dark:border-gray-900 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -49,18 +69,23 @@ export default function Header() {
               </a>
             </Link>
           </div>
-          <div className="flex space-x-2 px-6">
-            <div>
-              <img src="https://img.icons8.com/dusk/35/000000/sun--v2.png" />
-            </div>
-            <div className="self-center">
-              <label className={styles.switch}>
-                <input type="checkbox" onClick={darkMode} />
-                <span className={styles.slider}></span>
-              </label>
-            </div>
-            <div>
-              <img src="https://img.icons8.com/emoji/35/000000/crescent-moon-emoji.png" />{" "}
+          <div className="flex content-evenly">
+            <a onClick={switchLang} className="w-8">
+              <img src={langs[currentLang]} />
+            </a>
+            <div className="flex space-x-2 px-6">
+              <div>
+                <img src="https://img.icons8.com/dusk/35/000000/sun--v2.png" />
+              </div>
+              <div className="self-center">
+                <label className={styles.switch}>
+                  <input type="checkbox" onClick={darkMode} />
+                  <span className={styles.slider}></span>
+                </label>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/emoji/35/000000/crescent-moon-emoji.png" />{" "}
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,178 @@
+{
+  "projects": [
+    {
+      "projectName": "Trojan Horsemen",
+      "projectLogo": "../img/trojanhorsemen.png",
+      "hasBg": true,
+      "projectLink": "trojanhorse.cc",
+      "projectDescription": "A game.\nI participated in a group project with 9 other people as part of a university course. Helped by the Scrum methodology, I learned to communicate effectively and in the interest of the group.\n My tasks were distributed as follows :\n- Back end web application with Express and Typescript\n- PostgreSQL database with TypeORM\n- WebSockets with Socket.IO\n- Deployment with Docker and DigitalOcean",
+      "projectGithubLink": "https://github.com/sihamais/trojanhorsemen",
+      "projectTechs": [
+        {
+          "techName": "VueJS",
+          "techLogo": "faVuejs",
+          "techColor": "text-green-600",
+          "isFA": true
+        },
+        {
+          "techName": "Typescript",
+          "techLogo": "img/typescript.png",
+          "isFA": false
+        },
+        {
+          "techName": "NodeJS",
+          "techLogo": "faNodeJs",
+          "techColor": "text-green-500",
+          "isFA": true
+        },
+        {
+          "techName": "Docker",
+          "techLogo": "faDocker",
+          "techColor": "text-blue-600",
+          "isFA": true
+        }
+      ]
+    },
+    {
+      "projectName": "The Bank",
+      "projectLogo": "../img/dolores.png",
+      "hasBg": true,
+      "projectDescription": "An application to view the bank's quarterly turnover and sales volumes as well as bankers' performances.\nThe aim of this application is to combine efficiency and ergonomics in order to provide the information necessary for carrying out a quarterly report. The application groups together all the branches of the bank and allows data to be filtered according to the date, the branch, or the banker.\n",
+      "projectGithubLink": "https://github.com/sihamais/TheBank",
+      "projectTechs": [
+        {
+          "techName": "Qt",
+          "techLogo": "img/qt.svg",
+          "isFA": false
+        },
+        {
+          "techName": "C++",
+          "techLogo": "img/c++.svg",
+          "isFA": false
+        }
+      ]
+    },
+    {
+      "projectName": "Strugl",
+      "projectLogo": "../img/strugl.svg",
+      "hasBg": true,
+      "projectLink": "strugl.cc",
+      "projectDescription": "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crap crosses your mind? Struggle no more ! With Strugl you can be whoever you want.",
+      "projectGithubLink": "https://github.com/pacokleitz/strugl",
+      "projectTechs": [
+        {
+          "techName": "React",
+          "techLogo": "faReact",
+          "techColor": "text-blue-400",
+          "isFA": true
+        },
+        {
+          "techName": "GO",
+          "techLogo": "img/go.svg",
+          "isFA": false
+        }
+      ]
+    },
+    {
+      "projectName": "Valframe",
+      "projectLogo": "../img/valframe.svg",
+      "hasBg": false,
+      "projectLink": "valfra.me",
+      "projectDescription": "A different way to visualize data.\nThis program extracts data from large JSONS and displays it while taking into account the hierarchy. This project was generated with Angular CLI version 9.1.0 and is implemented as a single-page application.",
+      "projectGithubLink": "https://github.com/sihamais/valframe",
+      "projectTechs": [
+        {
+          "techName": "Angular",
+          "techLogo": "faAngular",
+          "techColor": "text-red-500",
+          "isFA": true
+        },
+        {
+          "techName": "Typescript",
+          "techLogo": "img/typescript.png",
+          "isFA": false
+        },
+        {
+          "techName": "Bootstrap",
+          "techLogo": "faBootstrap",
+          "techColor": "text-indigo-600",
+          "isFA": true
+        }
+      ]
+    }
+  ],
+  "about": [
+    {
+      "id": 0,
+      "pic": "../img/1-portfolio.svg",
+      "text": "Hey there ! I'm Siham\nWelcome to my portfolio !"
+    },
+    {
+      "id": 1,
+      "pic": "../img/2-programmer.svg",
+      "text": "I'm a software developper\nI spend most of my time on my computer learning new technologies and working on new projects"
+    },
+    {
+      "id": 2,
+      "pic": "../img/3-tasks.svg",
+      "text": "I always fix myself goals to get where I want to be later"
+    },
+    {
+      "id": 3,
+      "pic": "../img/4-career.svg",
+      "text": "I take my work very seriously and enjoy every step of it"
+    },
+    {
+      "id": 4,
+      "pic": "../img/5-universe.svg",
+      "text": "Armed with my logical reasoning and my creativity, I solve the problems I encounter on a daily basis"
+    },
+    {
+      "id": 5,
+      "pic": "../img/6-resume.svg",
+      "text": "Check out my resume or scroll down to learn more about me"
+    },
+    {
+      "id": 6,
+      "pic": "../img/7-mail.svg",
+      "text": "Get in touch if you want to talk"
+    }
+  ],
+  "skills": [
+    {
+      "directoryName": "Developement",
+      "subdirectories": [
+        "C",
+        "Python",
+        "Typescript",
+        "Javascript",
+        "HTML 5",
+        "CSS 3 / SASS",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "directoryName": "Frameworks",
+      "subdirectories": [
+        "Angular 10",
+        "React / Next.js",
+        "Node.js / Express.js",
+        "Bootstrap / Tailwind"
+      ]
+    },
+    {
+      "directoryName": "Tools",
+      "subdirectories": ["Git", "Docker", "Visual Studio Code", "Word", "Excel"]
+    },
+    {
+      "directoryName": "Soft skills",
+      "subdirectories": [
+        "Autonomy",
+        "Perfectionism",
+        "Sense of organization",
+        "Adaptability",
+        "Sense of relational"
+      ]
+    }
+  ]
+}
