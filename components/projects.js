@@ -42,7 +42,8 @@ const ProjectsList = [
         techName: "Socket-io",
         techLogo: "Socket-io.svg",
         isFA: false,
-      },{
+      },
+      {
         techName: "PostgreSQL",
         techLogo: "PostgreSQL.svg",
         isFA: false,
@@ -93,6 +94,16 @@ const ProjectsList = [
       {
         techName: "GO",
         techLogo: "go.svg",
+        isFA: false,
+      },
+      {
+        techName: "PostgreSQL",
+        techLogo: "PostgreSQL.svg",
+        isFA: false,
+      },
+      {
+        techName: "Tailwind",
+        techLogo: "tailwindcss.svg",
         isFA: false,
       },
     ],
