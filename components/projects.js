@@ -39,6 +39,15 @@ const ProjectsList = [
         isFA: true,
       },
       {
+        techName: "Socket-io",
+        techLogo: "Socket-io.svg",
+        isFA: false,
+      },{
+        techName: "PostgreSQL",
+        techLogo: "PostgreSQL.svg",
+        isFA: false,
+      },
+      {
         techName: "Docker",
         techLogo: faDocker,
         techColor: "text-blue-600",
