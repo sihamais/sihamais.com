@@ -112,7 +112,6 @@ const ProjectsList = [
     projectName: "Valframe",
     projectLogo: "../valframe.svg",
     hasBg: false,
-    projectLink: "valfra.me",
     projectDescription:
       "A different way to visualize data.\nThis program extracts data from large JSONS and displays it while taking into account the hierarchy. This project was generated with Angular CLI version 9.1.0 and is implemented as a single-page application.",
     projectGithubLink: "https://github.com/sihamais/valframe",
