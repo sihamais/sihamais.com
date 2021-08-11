@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function About() {
+  const router = useRouter();
   const [slides] = useState([
     {
       id: 0,
@@ -10,8 +12,7 @@ export default function About() {
     {
       id: 1,
       pic: "../2-programmer.svg",
-      text:
-        "I'm a software developper\nI spend most of my time on my computer learning new technologies and working on new projects",
+      text: "I'm a software developper\nI spend most of my time on my computer learning new technologies and working on new projects",
     },
     {
       id: 2,
@@ -26,8 +27,7 @@ export default function About() {
     {
       id: 4,
       pic: "../5-universe.svg",
-      text:
-        "Armed with my logical reasoning and my creativity, I solve the problems I encounter on a daily basis",
+      text: "Armed with my logical reasoning and my creativity, I solve the problems I encounter on a daily basis",
     },
     {
       id: 5,
@@ -50,7 +50,9 @@ export default function About() {
       }
       currentSlide = slides[currentPosition];
     }, 8000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   });
 
   function BtnClick(id) {
@@ -73,11 +75,11 @@ export default function About() {
   return (
     <div
       id="about"
-      className="w-screen lg:min-h-screen h-auto grid content-center justify-center
+      className="w-full lg:min-h-screen h-auto grid content-center justify-center
       bg-white md:py-20 md:pt-30 px-4 sm:px-6 lg:px-8 pt-20 py-10
       dark:bg-gray-800"
     >
-      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center">
+      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center items-between">
         <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200 transition ease-in-out">
           <img
             src={currentSlide.pic}

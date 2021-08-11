@@ -7,7 +7,7 @@ import { faPortrait } from "@fortawesome/free-solid-svg-icons"
 
 export default function Footer() {
   return (
-    <div className="absolute  w-screen h-auto py-3 items-center content-center bg-white dark:bg-gray-800">
+    <div className="absolute w-full h-auto py-3 items-center content-center bg-white dark:bg-gray-800">
       <div className="flex text-center justify-center text-gray-600 dark:text-white">
         <a href="https://github.com/sihamais" target="blank">
           <FontAwesomeIcon

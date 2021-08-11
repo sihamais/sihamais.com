@@ -25,7 +25,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="w-screen lg:min-h-screen md:h-auto px-4 lg:px-8 py-10
+      className="w-full lg:min-h-screen md:h-auto px-4 lg:px-8 py-10
       grid content-center gap-x-8 gap-y-10 
       bg-gray-100 dark:bg-gray-700"
     >

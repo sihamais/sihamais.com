@@ -4,8 +4,8 @@ const skillsList = [
     subdirectories: [
       "C",
       "Python",
-      "Typescript",
-      "Javascript",
+      "Java",
+      "Typescript / Javascript",
       "HTML 5",
       "CSS 3 / SASS",
       "PostgreSQL",
@@ -22,7 +22,7 @@ const skillsList = [
   },
   {
     directoryName: "Tools",
-    subdirectories: ["Git", "Docker", "Visual Studio Code", "Word", "Excel"],
+    subdirectories: ["Git", "Docker", "Visual Studio Code"],
   },
   {
     directoryName: "Soft skills",
@@ -65,7 +65,7 @@ export default function Skills() {
   return (
     <div
       id="skills"
-      className="w-screen lg:min-h-screen md:h-auto lg:px-20 bg-gray-100 dark:bg-gray-700 content-center justify-center grid py-10"
+      className="w-full lg:min-h-screen md:h-auto lg:px-20 bg-gray-100 dark:bg-gray-700 content-center justify-center grid py-10"
     >
       <div className="h-full px-4 py-10 sm:px-6 lg:px-8 content-center lg:text-center">
         <div className="flex">
@@ -76,7 +76,7 @@ export default function Skills() {
           <div className="h-1 w-1/5 bg-gradient-to-r from-red-400 to-yellow-400 m-auto dark:bg-gray-50 rounded-full"></div>
         </div>
       </div>
-      <div className="mt-10 space-y-0 lg:flex sm:grid sm:grid-cols-2 gap-10 lg:gap-x-0 space-x-0 flex-row lg:space-x-10 grid lg:items-start items-stretch self-center flex-grow">
+      <div className="mt-10 space-y-0 lg:flex  sm:grid-cols-2 gap-10 lg:gap-x-0 space-x-0 lg:space-x-10 grid lg:items-start">
         {skillsList.map((skill) => (
           <DirectoryRender key={skill.directoryName} skill={skill} />
         ))}

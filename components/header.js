@@ -28,22 +28,22 @@ export default function Header() {
             </Link>
           </div>
           <div className="md:block hidden flex space-x-4 px-6">
-            <Link href="/#about" to="about" smooth={true}>
+            <Link href="/#about" to="about" as="/" smooth={true}>
               <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 About
               </a>
             </Link>
-            <Link href="/#skills" to="skills" smooth={true}>
+            <Link href="/#skills" to="skills" as="/" smooth={true}>
               <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Skills
               </a>
             </Link>
-            <Link href="/#projects" to="projects" smooth={true}>
+            <Link href="/#projects" to="projects" as="/" smooth={true}>
               <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Projects
               </a>
             </Link>
-            <Link href="/#contact" to="contact" smooth={true}>
+            <Link href="/#contact" to="contact" as="/" smooth={true}>
               <a className="cursor-pointer text-gray-600 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </a>

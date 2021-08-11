@@ -13,12 +13,12 @@ export default function Home() {
         <title>sihamais.com</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Header />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
+      <Header /> 
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
