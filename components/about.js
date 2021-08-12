@@ -79,14 +79,14 @@ export default function About() {
       bg-white md:py-20 md:pt-30 px-4 sm:px-6 lg:px-8 pt-20 py-10
       dark:bg-gray-800"
     >
-      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center items-between">
+      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center items-between max-w-7xl">
         <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200 transition ease-in-out">
           <img
             src={currentSlide.pic}
             className="sm:h-md h-sm md:h-lg justify-self-center"
           ></img>
           {currentPosition == 5 && (
-            <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
+            <h3 className="px-4 text-xl md:text-left m-auto font-bold text-justify text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
               <a
                 href="../CV.pdf"
                 target="blank"
@@ -99,7 +99,7 @@ export default function About() {
             </h3>
           )}
           {currentPosition != 5 && (
-            <h3 className="px-4 text-xl md:text-left text-center m-auto font-bold text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
+            <h3 className="px-4 text-xl md:text-left m-auto font-bold text-justify text-gray-800 dark:text-white uppercase whitespace-pre-wrap">
               {currentSlide.text}
             </h3>
           )}
