@@ -1,18 +1,17 @@
 import styles from "../styles/Home.module.css";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
 
 let dark = false;
 
 function darkMode() {
-  dark = !dark;
-  if (dark) {
+  if (!dark) {
     document.documentElement.classList.add("dark");
     localStorage.theme = "dark";
   } else {
     document.documentElement.classList.remove("dark");
     localStorage.theme = "light";
   }
+  dark = !dark;
 }
 
 export default function Header() {

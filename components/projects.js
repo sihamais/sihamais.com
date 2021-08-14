@@ -17,7 +17,7 @@ const ProjectsList = [
     hasBg: true,
     projectLink: "strugl.cc",
     projectDescription:
-      "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crosses your mind? Struggle no more ! With Strugl you can be whoever you want.\nI am in charge of the front end application and my realisations are distributed as follow:\n- Front end web application with Next.js and Typescript\n- Data management with Redux\n- Responsive and interactive design with Tailwind",
+      "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crosses your mind? Struggle no more ! With Strugl you can be whoever you want.\nI am in charge of the front end application and my realisations are distributed as follow:\n- Front end web application with Next.js and Typescript\n- State management with Redux\n- Responsive and interactive design with Tailwind",
     projectGithubLink: "https://github.com/pacokleitz/strugl",
     projectTechs: [
       {
@@ -124,6 +124,11 @@ const ProjectsList = [
       {
         techName: "Typescript",
         techLogo: "typescript.png",
+        isFA: false,
+      },
+      {
+        techName: "JSON",
+        techLogo: "JSON.svg",
         isFA: false,
       },
       {
