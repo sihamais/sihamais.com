@@ -2,10 +2,9 @@ const skillsList = [
   {
     directoryName: "Developement",
     subdirectories: [
-      "C",
-      "Python",
-      "Java",
       "Typescript / Javascript",
+      "Java",
+      "C",
       "HTML 5",
       "CSS 3 / SASS",
       "PostgreSQL",
@@ -14,24 +13,24 @@ const skillsList = [
   {
     directoryName: "Frameworks",
     subdirectories: [
-      "Angular 10",
       "React / Next.js",
       "Node.js / Express.js",
+      "Angular 10",
       "Bootstrap / Tailwind",
     ],
   },
   {
     directoryName: "Tools",
-    subdirectories: ["Git", "Docker", "Visual Studio Code"],
+    subdirectories: ["Git", "Docker", "Kubernetes", "Visual Studio Code"],
   },
   {
     directoryName: "Soft skills",
     subdirectories: [
-      "Autonomy",
+      "Adaptability",
       "Perfectionism",
       "Sense of organization",
-      "Adaptability",
       "Sense of relational",
+      "Autonomy",
     ],
   },
 ];

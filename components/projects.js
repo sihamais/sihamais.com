@@ -17,7 +17,7 @@ const ProjectsList = [
     hasBg: true,
     projectLink: "strugl.cc",
     projectDescription:
-      "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crosses your mind? Struggle no more ! With Strugl you can be whoever you want.\nI am in charge of the front end application and my realisations are distributed as follow:\n- Front end web application with Next.js and Typescript\n- State management with Redux\n- Responsive and interactive design with Tailwind",
+      "A privacy-conscious social network.\nStruggling to find a decentralized social network in which you can say whatever crosses your mind? Struggle no more ! With Strugl you can be whoever you want.\nI am in charge of the front end application and my realisations are distributed as follow:\n- Front end web application with Next.js and Typescript\n- State management with Redux\n- Responsive and interactive layout with Tailwind",
     projectGithubLink: "https://github.com/pacokleitz/strugl",
     projectTechs: [
       {
@@ -25,6 +25,11 @@ const ProjectsList = [
         techLogo: faReact,
         techColor: "text-blue-400",
         isFA: true,
+      },
+      {
+        techName: "Redux",
+        techLogo: "redux.svg",
+        isFA: false,
       },
       {
         techName: "GO",
@@ -87,58 +92,58 @@ const ProjectsList = [
       },
     ],
   },
-  {
-    projectName: "The Bank",
-    projectLogo: "../dolores.png",
-    hasBg: true,
-    projectDescription:
-      "An application to view the bank's quarterly turnover and sales volumes as well as bankers' performances.\nThe aim of this application is to combine efficiency and ergonomics in order to provide the information necessary for carrying out a quarterly report. The application groups together all the branches of the bank and allows data to be filtered according to the date, the branch, or the banker.\n",
-    projectGithubLink: "https://github.com/sihamais/TheBank",
-    projectTechs: [
-      {
-        techName: "Qt",
-        techLogo: "qt.svg",
-        isFA: false,
-      },
-      {
-        techName: "C++",
-        techLogo: "c++.svg",
-        isFA: false,
-      },
-    ],
-  },
-  {
-    projectName: "Valframe",
-    projectLogo: "../valframe.svg",
-    hasBg: false,
-    projectDescription:
-      "A different way to visualize data.\nThis program extracts data from large JSONS and displays it while taking into account the hierarchy. This project was generated with Angular CLI version 9.1.0 and is implemented as a single-page application.",
-    projectGithubLink: "https://github.com/sihamais/valframe",
-    projectTechs: [
-      {
-        techName: "Angular",
-        techLogo: faAngular,
-        techColor: "text-red-500",
-        isFA: true,
-      },
-      {
-        techName: "Typescript",
-        techLogo: "typescript.png",
-        isFA: false,
-      },
-      {
-        techName: "JSON",
-        techLogo: "JSON.svg",
-        isFA: false,
-      },
-      {
-        techName: "Bootstrap",
-        techLogo: faBootstrap,
-        techColor: "text-indigo-600",
-        isFA: true,
-      },
-    ],
-  },
+  // {
+  //   projectName: "The Bank",
+  //   projectLogo: "../dolores.png",
+  //   hasBg: true,
+  //   projectDescription:
+  //     "An application to view the bank's quarterly turnover and sales volumes as well as bankers' performances.\nThe aim of this application is to combine efficiency and ergonomics in order to provide the information necessary for carrying out a quarterly report. The application groups together all the branches of the bank and allows data to be filtered according to the date, the branch, or the banker.\n",
+  //   projectGithubLink: "https://github.com/sihamais/TheBank",
+  //   projectTechs: [
+  //     {
+  //       techName: "Qt",
+  //       techLogo: "qt.svg",
+  //       isFA: false,
+  //     },
+  //     {
+  //       techName: "C++",
+  //       techLogo: "c++.svg",
+  //       isFA: false,
+  //     },
+  //   ],
+  // },
+  // {
+  //   projectName: "Valframe",
+  //   projectLogo: "../valframe.svg",
+  //   hasBg: false,
+  //   projectDescription:
+  //     "A different way to visualize data.\nThis program extracts data from large JSONS and displays it while taking into account the hierarchy. This project was generated with Angular CLI version 9.1.0 and is implemented as a single-page application.",
+  //   projectGithubLink: "https://github.com/sihamais/valframe",
+  //   projectTechs: [
+  //     {
+  //       techName: "Angular",
+  //       techLogo: faAngular,
+  //       techColor: "text-red-500",
+  //       isFA: true,
+  //     },
+  //     {
+  //       techName: "Typescript",
+  //       techLogo: "typescript.png",
+  //       isFA: false,
+  //     },
+  //     {
+  //       techName: "JSON",
+  //       techLogo: "JSON.svg",
+  //       isFA: false,
+  //     },
+  //     {
+  //       techName: "Bootstrap",
+  //       techLogo: faBootstrap,
+  //       techColor: "text-indigo-600",
+  //       isFA: true,
+  //     },
+  //   ],
+  // },
 ];
 
 function ProjectsRender(props) {

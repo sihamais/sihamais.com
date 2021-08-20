@@ -49,7 +49,7 @@ export default function Contact() {
                 <div className="grid grid-cols-6 gap-x-6 gap-y-2 ">
                   <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="first_name"
+                      htmlFor="first_name"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                     >
                       First name
