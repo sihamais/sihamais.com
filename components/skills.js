@@ -47,7 +47,7 @@ function SubdirectoryRender(props) {
 
 function DirectoryRender(props) {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-md rounded-md">
+    <div className="bg-white dark:bg-gray-800 shadow-md rounded-md animate-fadeIn">
       <h3 className="text-2xl font-semibold p-7 bg-clip-text text-transparent bg-gradient-to-t from-gray-200 to-gray-400 dark:from-gray-500 dark:to-gray-700">
         {props.skill.directoryName}
       </h3>

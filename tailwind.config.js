@@ -3,31 +3,39 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      height:{
-        sm: '200px',
-        md: '400px',
-        lg: '400px'
+      height: {
+        sm: "200px",
+        md: "400px",
+        lg: "400px",
       },
       keyframes: {
-        fade: {
+        fadeIn: {
           "0%": {
             opacity: 0,
-          },
-          "50%": {
-            opacity: 0.5,
           },
           "100%": {
             opacity: 1,
           },
         },
+        fadeOut: {
+          "0%": {
+            opacity: 1,
+          },
+          "100%": {
+            opacity: 0,
+          },
+        },
       },
       animation: {
-        fade: "fade 3s",
+        fadeIn: "fadeIn ease 3s",
+        fadeOut: "fadeOut ease 3s",
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      justifyContent: ["dark"],
+    },
   },
   plugins: [],
 };

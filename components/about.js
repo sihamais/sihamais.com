@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function About() {
   const router = useRouter();
@@ -75,12 +76,12 @@ export default function About() {
   return (
     <div
       id="about"
-      className="w-full lg:min-h-screen h-auto grid content-center justify-center
+      className="w-full lg:min-h-screen h-auto grid justify-center
       bg-white md:py-20 md:pt-30 px-4 sm:px-6 lg:px-8 pt-20 py-10
       dark:bg-gray-800"
     >
-      <div className="h-auto space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center items-between max-w-7xl">
-        <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200 transition ease-in-out">
+      <div className="h-full grid space-y-4 lg:space-y-10 py-4 lg:px-12 sm:px-6 content-center items-between max-w-7xl">
+        <div className="md:flex grid space-x-0 gap-2 justify-center h-auto dark:text-gray-200">
           <img
             src={currentSlide.pic}
             className="sm:h-md h-sm md:h-lg justify-self-center"
@@ -109,6 +110,24 @@ export default function About() {
             <ButtonRender key={slide.id} slide={slide} />
           ))}
         </div>
+      </div>
+      <div className="text-gray-700 dark:text-gray-300 grid justify-self-center content-end cursor-pointer focus:outline-none">
+        <Link href="/#skills" to="skills" as="/" smooth={true}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 w-10 animate-bounce"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </Link>
       </div>
     </div>
   );

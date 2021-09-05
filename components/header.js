@@ -1,20 +1,20 @@
-import styles from "../styles/Home.module.css";
 import { Link, animateScroll as scroll } from "react-scroll";
-
-let dark = false;
-
-function darkMode() {
-  if (!dark) {
-    document.documentElement.classList.add("dark");
-    localStorage.theme = "dark";
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
-  }
-  dark = !dark;
-}
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [isDark, setDark] = useState(false);
+
+  function darkMode() {
+    if (!isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+    }
+    setDark(!isDark);
+  }
+
   return (
     <nav className="bg-white fixed w-screen dark:border-gray-900 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -48,19 +48,13 @@ export default function Header() {
               </a>
             </Link>
           </div>
-          <div className="flex space-x-2 px-6">
-            <div>
-              <img src="https://img.icons8.com/dusk/35/000000/sun--v2.png" />
-            </div>
-            <div className="self-center">
-              <label className={styles.switch}>
-                <input type="checkbox" onClick={darkMode} />
-                <span className={styles.slider}></span>
-              </label>
-            </div>
-            <div>
-              <img src="https://img.icons8.com/emoji/35/000000/crescent-moon-emoji.png" />{" "}
-            </div>
+          <div
+            className="w-28 h-9 rounded-3xl bg-gray-100 dark:bg-gray-700 border dark:border-gray-700 p-1 grid items-center content-center justify-start dark:justify-end cursor-pointer focus:outline-none"
+            onClick={darkMode}
+          >
+            <p className="bg-white dark:bg-gray-800 shadow border-gray-200 w-min rounded-3xl self-center px-3 py-1 text-sm font-semibold text-gray-800 dark:text-gray-300 cursor-pointer focus:outline-none">
+              {isDark ? "DARK" : "LIGHT"}
+            </p>
           </div>
         </div>
       </div>
