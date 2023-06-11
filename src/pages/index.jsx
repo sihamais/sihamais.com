@@ -7,7 +7,6 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
@@ -242,11 +241,6 @@ export default function Home({ articles }) {
             I’m Siham, a software and security developer based in Strasbourg, France.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://instagram.com/sihamais"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
             <SocialLink
               href="https://github.com/sihamais"
               aria-label="Follow on GitHub"
