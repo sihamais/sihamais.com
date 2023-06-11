@@ -1,0 +1,311 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import castle from './castle-in-the-clouds.jpg'
+import architecture from './asgard_architecture.jpeg'
+import workflow from './asgard-workflow.jpeg'
+
+export const meta = {
+  author: 'Siham Aissaoui',
+  date: '2022-11-28',
+  title: 'Application Security at Scalingo #1: Asgard',
+  description:
+    'Asgard, developed by Scalingo, is a cutting-edge platform that prioritizes "compliance-as-code" functionality. It revolutionizes the way software teams approach compliance by integrating it into their development processes. Asgard automates the enforcement and validation of compliance measures, ensuring that code repositories and binary assets adhere to regulatory requirements.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+**Original post:** [https://scalingo.com/blog/asgard](https://scalingo.com/blog/asgard)
+
+<Image src={castle} alt="" />
+
+At Scalingo, **data security and protection** are major concerns. Our ISO 27001 compliance process made it necessary to define a strategy to reference all assets (hardware, software, suppliers, etc.). And while an editable document is enough for static assets such as hardware and suppliers, software assets are constantly evolving. With over 350 code repositories, Scalingo cannot rely on a text document to reference them all and keep them up to date.
+
+In this article, you will discover the project developed within the InfoSec (Information Security) team to meet this need and the impact it has on security within Scalingo.
+
+## What is Asgard?
+
+Asgard, does it speak to you? Fans of Norse mythology will say this is the domain of the gods. Marvel fans will call it Loki's home. At Scalingo, Asgard means something else. Curious? Asgard is short for **A**pplication **S**ecurity **G**u**ard**.
+
+Nice, but what is it intended for? It’s a tool that helps maintain security on Scalingo software assets including source code repositories and binary assets.
+
+Why do you need to protect assets? Assets may be exposed to risks of a malicious or accidental nature. The risks on these assets can be malicious access to the code, accidental modification of it or even the introduction of malfunctions and vulnerabilities in the code. They are characterized by a code change that could lead to downtime, data corruption or data leak.
+
+## Why Asgard?
+
+Previously, Scalingo software assets were referenced in a database that required a human intervention to maintain its content. This task was becoming more and more tedious for Scalingo developers as new code repositories were created. Honestly, nobody wants to do that. And as at Scalingo we type 427 characters per minute, the document is not immune to errors.
+
+**Quick quiz:** Have you ever spent 2 hours writing a script to automate a repetitive action that would have taken you as long to do it manually? Are you always trying to optimize the amount of effort you put into your work? Have you ever shown your dissatisfaction with a task that you have already done many times?
+
+If you answered yes to all of these questions, congratulations your DNA is 80% developer and 20% lazy.
+
+**Good news…** At Scalingo, we are too. When other companies reference their assets on Excel documents, Scalingo, a firm believer of the Everything-as-code culture, decides to embrace **Compliance-as-code** by creating Asgard; a tool for Scalingo developers that references software assets, automates the assessment of different aspects of security and standardizes security measures across the board.
+
+## How does Asgard work?
+
+Asgard consists of two parts, the server part written in Ruby and the command line interface (CLI) part written in Go. The server communicates with the GitHub API which provides data from the Git code repositories, fundamental for security assessment. The received data is then processed and stored in a database to be retrieved if necessary.
+
+<Image src={architecture} alt="" />
+
+Each code repository is configured through a TOML format metadata file. Metadata are attributes describing the code repository. It includes, for example, the owner of the repository, the team responsible for it or the language used.
+
+<Image src={workflow} alt="" />
+
+Throughout their working day, my talented and efficient colleagues push changes to the source code of the various GitHub repositories (1). Every morning, Asgard synchronizes metadata (2) by retrieving it from GitHub, our source code versioning tool. This is followed by the processing of this metadata and the evaluation of the security of each code deposit (3). Finally, users can call on Asgard any time to obtain information on security or code repositories metadata (4).
+
+## The features
+
+From the start, InfoSec adopted the Agile methodology to develop Asgard. User stories stem from the needs expressed by users, whether they are from the InfoSec team or not. On several occasions, surveys have been carried out among future users: the developers of Scalingo. A user-centric approach that ensures that the delivered functionality meets expectations.
+
+Asgard provides several features to make it easier for configuration on code repositories, information retrieval and security assessments.
+
+```bash
+➜ ~ asgard
+|~~~~/                                                |~~~~/
+|    \                   ASGARD                       |    \
+|~~~~~         Application Security Guard             |~~~~~
+|_   _   _   _                           _   _   _   _|
+| |_| |_| |_| |                         | |_| |_| |_| |
+|__|__|__|__|_|                         |__|__|__|__|_|
+|_|__/   \_|__|                         |_|__/   \_|__|
+|__|_\___/__|_|  _   _   _   _   _   _  |__|_\___/__|_|
+|_|__|__|__|__|_| |_| |_| |_| |_| |_| |_|_|__|__|__|__|
+|__|__|__|__|_|__|__|__|__|__|__|__|__|_|__|__|__|__|_|
+|_|__|__|__|__|_|__|__|_/+++++\___|__|__|_|__|__|__|__|
+|__|__|__|__|_|__|__|__|+++++++||__|__|_|__|__|__|__|_|
+|_|__|__|__|__|_|__|__||+++++++|__|__|__|_|__|__|__|__|
+|__|__|__|__|__|_|__|__|+++++++||__|__|_||_|__|__|__|_|
+
+NAME:
+   ASGARD - Application Security Guard
+
+USAGE:
+   asgard command [command options] [arguments...]
+
+AUTHOR:
+   InfoSec Team <security@scalingo.com>
+
+COMMANDS:
+   help   Shows a list of commands or help for one command
+   init   Initializes a metatdata file in your repository
+   check  Checks the validity of the metatdata file in your repository
+   get    Get a repository metadata
+   list   Lists your organizations repositories
+   audit  Audits your organizations repositories
+   sync   Synchronize your repository in backend
+```
+
+### How do we add metadata to a repository?
+
+Each team must initialize the metadata of its Git code repositories. Write a configuration file for each of the 350 code repositories? No thanks. Don't panic, Asgard has what you need. The `init` command provides an interactive command-line interface in the form of a multiple-choice quiz. For each metadata, a list of possible values will be displayed. Thus, the developer will only have to scroll through the options and choose the appropriate one. The command then creates a configuration file and writes the selected options into it. Not bad right?
+
+```bash
+➜  ~ asgard init
+? Who is the code owner ? siham@scalingo.com
+? Who is the team responsible for this project ? InfoSec
+? Describe your project in one sentence:
+? What kind of server is it deployed on ? (optional)  [Use arrows to move, space to select, <right> to all, <left> to none, type to filter]
+  [ ]  app-hosting-node
+  [x]  builder
+  [ ]  database-hosting-node
+> [x]  front
+  [ ]  internal
+  [ ]  scalingo-platform
+```
+
+### Is there a way to check if the metadata file is valid?
+
+Although automatically generated with the `init` command, Asgard's configuration file is not immune to errors. A developer could very well introduce a mistake there (or have fun testing the limits of Asgard). It was therefore necessary to create a functionality that verifies that the configuration file is correct. The `check` command will browse the configuration file and report the errors it encounters. Several categories of errors can be reported:
+- the absence of the configuration file
+- the location of the configuration file
+- the size of the configuration file
+- the absence of mandatory metadata in the configuration file
+- the absence of non-mandatory metadata in the configuration file
+- the validity of each metadata: type, size, authorized values, etc.
+
+```bash
+➜ example ~ asgard check
+[error] invalid field 'owner': value 'unknown@scalingo.com' is not valid
+[error] empty field 'description'
+[error] invalid field 'destination_server': field is not a list
+[error] invalid field 'flags': value 'buildpak' is not valid
+```
+
+### Is it possible to display a list of repos?
+
+Asgard allows you to view the list of code repositories. This list command displays a `list` of repos and the metadata relating to each code repository. We therefore find the owner of the code repository, the team responsible for it, the GitHub link to access it and, if deployed, the destination server.
+
+```bash
+➜ ~ asgard list
++-------------------+---------+---------+--------------------------------------+--------------------+
+|       NAME        |  TEAM   |  OWNER  |              GITHUB URL              | DESTINATION SERVER |
++-------------------+---------+---------+--------------------------------------+--------------------+
+| Scalingo/example1 | IST     | Leo     | https://github.com/Scalingo/example1 | internal           |
+| Scalingo/example2 | UFS     | Kevin   | https://github.com/Scalingo/example2 | scalingo-platform  |
+| Scalingo/example3 | InfoSec | Siham   | https://github.com/Scalingo/example3 | internal           |
+| Scalingo/example4 | SRE     | John    | https://github.com/Scalingo/example4 | front              |
+| Scalingo/example5 | InfoSec | Yannick | https://github.com/Scalingo/example5 | scalingo-platform  |
+| Scalingo/example6 | IST     | Pierre  | https://github.com/Scalingo/example6 | builder            |
+| Scalingo/example7 | IST     | Etienne | https://github.com/Scalingo/example7 | front internal     |
+| Scalingo/example8 | UFS     | Jean    | https://github.com/Scalingo/example8 | scalingo-platform  |
+| Scalingo/example9 | SRE     | Brandon | https://github.com/Scalingo/example9 | app-hosting-node   |
+|         :         |    :    |    :    |                  :                   |          :         |
++-------------------+---------+---------+--------------------------------------+--------------------+
+```
+
+And since we're generous at InfoSec, we've added plenty of options to filter the list based on metadata.
+
+### What about one repo’s metadata?
+
+In the `list` command, we find some of the metadata entered for each code repository. To find all the metadata of a code repository, the get command is the solution.
+
+```bash
+➜ ~ asgard get example
++--------------------+-------------------------------------+
+| NAME               | Scalingo/example                    |
+| GITHUB URL         | https://github.com/Scalingo/example |
+| OWNER              | Siham                               |
+| TEAM               | InfoSec                             |
+| DESCRIPTION        | I am an example repository.         |
+| LANGUAGES          | ruby                                |
+| FLAGS              | cli scalingo-app tools              |
+| DESTINATION SERVER | internal                            |
+| DEPENDENCIES       |                                     |
++--------------------+-------------------------------------+
+```
+
+### What if I want to see my changes instantly?
+
+Code repos are synced to Asgard every morning. There are times when (eager) developers want to view changes or fixes they've made to code repositories without waiting for the next sync. The `sync` command allows you to instantly retrieve the latest version of a code repository from GitHub. The developer can then see their changes on Asgard.
+
+### What about security?
+
+One of the coolest features of Asgard is the audit command. Asgard performs the security assessment of software assets and focuses on 4 aspects:
+- Metadata check
+- Dependabot configuration check
+- Branch protection check
+- Branches’ divergence check
+
+**Metadata check**
+
+Since metadata configuration is necessary to assess the security of assets, the first feature implemented in the audit was the metadata configuration assessment which helps to detect errors or lack of configuration on code repositories (a bit like the check command but on the server side).
+
+```bash
+➜  ~ asgard audit Scalingo/example
++-------------------+--------------------------------------+
+| NAME              | Scalingo/example                     |
++-------------------+--------------------------------------+
+| ISSUES            |                                      |
+| METADATA          | [e] missing metadata file            |
++-------------------+--------------------------------------+
+| STATUS            | ERROR                                |
++-------------------+--------------------------------------+
+TOTAL: 0 warning, 1 error
+```
+
+**Dependabot configuration check**
+
+In order to ensure dependency security, Dependabot must be properly configured. Asgard verifies that the configuration follows the one agreed upon prior to the implementation of the feature.
+
+```bash
+➜  ~ asgard audit Scalingo/example
++-------------------+-----------------------------------------------------------------------+
+| NAME              | Scalingo/example                                                      |
++-------------------+-----------------------------------------------------------------------+
+| ISSUES            |                                                                       |
+| DEPENDABOT        | [e] invalid field 'dependency-type' on 'ruby' configuration           |
++-------------------+-----------------------------------------------------------------------+
+| STATUS            | ERROR                                                                 |
++-------------------+-----------------------------------------------------------------------+
+TOTAL: 0 warning, 1 error
+```
+
+**Branch protection check**
+
+Branch protection must be configured for each code repository. Asgard verifies that the configuration follows the configuration agreed upon prior to the feature implementation.
+
+```bash
+➜  ~ asgard audit Scalingo/example
++-------------------+--------------------------------------+
+| NAME              | Scalingo/example                     |
++-------------------+--------------------------------------+
+| ISSUES            |                                      |
+| BRANCH PROTECTION | [e] branch 'master' is not protected |
++-------------------+--------------------------------------+
+| STATUS            | ERROR                                |
++-------------------+--------------------------------------+
+TOTAL: 0 warning, 1 error
+```
+
+**Branch divergence check**
+
+The master branch, often referred to as master or main, is tied to Scalingo's testing environment. This environment, also called _staging_, will allow developers to test new features before offering them to users. The branch linked to production, called prod, will contain the code deployed to our users.
+
+Scalingo applying a continuous deployment process, developers sometimes wait to have several cumulative fixes before merging them into the “prod” branch. But if this delay takes too long, we therefore have patches, which may concern security, which “sleep” instead of being deployed.
+
+We call this a “divergence”. Nothing to do with the movie of the same name.
+
+This is how Asgard steps in by returning the status of the divergence of the prod and master branches and the details of that divergence.
+
+```bash
+➜  ~ asgard audit Scalingo/example
++-------------------+-------------------------------------------------------------------------------------------+
+| NAME              | Scalingo/example                                                                          |
++-------------------+-------------------------------------------------------------------------------------------+
+| ISSUES            |                                                                                           |
+| DRIFT             | [w] master is 9 commits ahead of prod                                                     |
+|                   | (showing 3 merge commits)                                                                 |
+|                   | dev: Merge pull request ##914 from Scalingo/feat/feat_description (3 weeks ago)           |
+|                   | dev: Merge pull request ##913 from Scalingo/feat/feat_description (1 month ago)           |
+|                   | dev: Merge pull request ##912 from Scalingo/fix/fix_description (2 months ago)            |
+|                   | see https://github.com/Scalingo/example/compare/prod...master for more details            |
++-------------------+-------------------------------------------------------------------------------------------+
+| STATUS            | OK                                                                                        |
++-------------------+-------------------------------------------------------------------------------------------+
+TOTAL: 1 warning, 0 error
+```
+
+## The results
+
+Asgard also allows viewing the result of the audit of each code repository in a list of issues. This makes it easier to spot code repositories with security issues.
+
+```bash
+➜ ~ asgard audit
++-------------------+---------------------------------------------------------------------------+
+|     REPOSITORY    |                                   PROBLEMS                                |
++-------------------+---------------------------------------------------------------------------+
+| Scalingo/example1 | [error] invalid field 'dependency-type' on 'ruby' configuration (+1w +1e) |
+| Scalingo/example2 | [error] missing metadata file (+2e)                                       |
+| Scalingo/example3 |                                                                           |
+| Scalingo/example4 | [warning] missing field 'destination_server' (+1e)                        |
+| Scalingo/example5 | [error] invalid field 'dismiss_stale_review' (+1e)                        |
+| Scalingo/example6 | [error] no 'javascript' configuration detected (+1e)                      |
+| Scalingo/example7 |                                                                           |
+| Scalingo/example8 | [error] branch 'master' is not protected                                  |
+| Scalingo/example9 | [warning] master is 20 commits ahead of prod                              |
+|         :         |                                      :                                    |
++-------------------+---------------------------------------------------------------------------+
+TOTAL: 66 warnings, 827 errors
+```
+
+As you would expect with so many code repositories, Asgard exposed a lot of inconsistencies between our code repositories and certainly made our teams aware of the importance of security processes.
+
+## Future features
+
+Asgard was released in March 2022 and has been evolving ever since, always to automate and harmonize security on assets.
+
+Like any good successful product, we are now overwhelmed with requests and ideas, here is a selection:
+
+- Slack notifications
+- Harmonization of continuous integration rules
+- Terraform and Bash support
+- A team leaderboard (but who asked for that?!)
+
+## Finally
+
+The InfoSec team's mission is to determine the most effective security measures for Scalingo and implement them. By adopting a Compliance-As-Code approach, we have developed a tool aligned with the team's values and allowing us to harmonize development security.
+
+With this article, I wanted to show you the hidden side of Scalingo, reveal a little about the tools we put in place to ensure the operation of the platform.
+
+I hope you enjoyed it!
+
+And if you also love cloud and security, [join Scalingo](https://www.scalingo.com/jobs) or send us a [spontaneous application](https://scalingo.com/contact).
