@@ -102,6 +102,10 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
+async function subscribe(){
+  await fetch("/api/subscribe", {method: "post"})
+}
+
 function Newsletter() {
   return (
     <form
