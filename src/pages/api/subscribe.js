@@ -14,7 +14,7 @@ export default function handler(req, res) {
 
   apiInstance.createContact(createContact).then(
     function (data) {
-      res.redirect(307, '/confirmation')
+      res.redirect(302, '/confirmation')
     },
     function (error) {
       console.log(error)
