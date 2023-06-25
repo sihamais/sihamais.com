@@ -1,24 +1,23 @@
-import mailjet from 'node-mailjet'
+import * as SibApiV3Sdk from '@sendinblue/client'
 
-const mailjetPubKey = process.env.MJ_APIKEY_PUBLIC
-const mailjetSecKey = process.env.MJ_APIKEY_PRIVATE
+const brevoApiKey = process.env.BREVO_API_KEY
+const listID = process.env.BREVO_LIST_ID
 
 export default function handler(req, res) {
-  let email = req.body.email
+  let apiInstance = new SibApiV3Sdk.ContactsApi()
+  let apiKey = apiInstance.authentications['apiKey']
+  apiKey.apiKey = brevoApiKey
 
-  let mailjetConn = mailjet.apiConnect(mailjetPubKey, mailjetSecKey)
+  let createContact = new SibApiV3Sdk.CreateContact()
+  createContact.email = req.body.email
+  createContact.listIds = [+listID]
 
-  let request = mailjetConn.post('contact', { version: 'v3' }).request({
-    IsExcludedFromCampaigns: 'false',
-    Name: email.split('@')[0],
-    Email: email,
-  })
-
-  request
-    .then((result) => {
-      res.redirect(307, '/thank-you')
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  apiInstance.createContact(createContact).then(
+    function (data) {
+      res.redirect(307, '/confirmation')
+    },
+    function (error) {
+      console.log(error)
+    }
+  )
 }
