@@ -18,6 +18,7 @@ export default function handler(req, res) {
     },
     function (error) {
       console.log(error)
+      res.redirect(302, '/oops')
     }
   )
 }
