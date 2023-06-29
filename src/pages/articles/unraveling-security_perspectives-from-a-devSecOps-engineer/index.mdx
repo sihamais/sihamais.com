@@ -1,0 +1,78 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import job_expectations from './job-expectations-vs-reality.png'
+import developer_learning_curve from './developer-learning-curve.png'
+import security_learning_curve from './security-learning-curve.png'
+import mindset_analogy from './mindset-analogy.png'
+import stonehenge from './stonehenge.jpg'
+
+export const meta = {
+  author: 'Siham Aissaoui',
+  date: '2023-06-29',
+  title: 'Unraveling Security: Perspectives from a DevSecOps Engineer',
+  description:
+    'Unveil the hidden truths and misconceptions of security in this enlightening article by a DevSecOps engineer. Explore diverse roles beyond hacking and witness the mindset transformation from square to circle-shaped thinking. Join the journey of continuous learning in the ever-evolving world of security.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image src={stonehenge} alt="" />
+
+Over the past two years, my journey as a DevSecOps engineer has been a transformative experience, shaping my perception of the security field in profound ways. It is with a humble heart that I share my insights, recognizing that my evolving understanding of security is just a small piece of the larger puzzle. Whether you're a newcomer seeking to grasp the essence of this field or someone contemplating a career shift, I hope that my reflections can offer valuable perspectives to guide your path.
+
+## The expectations
+
+Misconceptions often cloud people's understanding of security, frequently associating it solely with hacking. However, hacking represents just one facet of the multifaceted security field. In reality, there are numerous roles within security that one may not initially expect.
+
+When contemplating security, what comes to mind? Personally, I envisioned a mysterious individual seated behind a laptop, hacking into any system they encountered. However, I soon realized how far off this perception was from reality.
+
+At the time, my lack of hacking skills made me question my suitability for a security position. Yet, a specific job description caught my attention, particularly the requirements section. Surprisingly, my profile aligned with the company's expectations. Moreover, the company recognized the learning curve inherent in security engineering. They did not anticipate a know-it-all, and rightfully so.
+
+In reality, security professionals undertake diverse tasks such as risk assessment, vulnerability management, incident response, and security architecture. The field is rich with opportunities that cater to different skill sets and interests, making it accessible to individuals from various backgrounds.
+
+A remarkable aspect of security roles is that expectations can significantly vary across different companies, tailored to their specific security needs. Consequently, finding identical requirements elsewhere becomes nearly impossible. Eventually, I discovered that this field harbors no rigid expectations. The only prerequisite is a strong desire to learn, while everything else is acquired on the job.
+
+<Image src={job_expectations} alt="" />
+
+Undoubtedly, some individuals are better suited to the security field than others. If you find yourself questioning your compatibility, read on for some key insights.
+
+## The mindset
+
+If I had to choose one quality to look for in an applicant, it would be versatility. While other jobs often demand specialization, security thrives on curiosity, as assignments frequently diverge from one another. Personally, this aspect satisfies me, as I tend to grow restless when working on the same project for prolonged periods. If you can relate to this sentiment, the security field might offer a unique opportunity to achieve psychological equilibrium in your work.
+
+However, the field's versatility presents an inherent inconvenience. While you will undoubtedly acquire a wealth of knowledge, applying that knowledge to diverse projects may prove challenging. Make no mistake, the fundamental principles of security—confidentiality, integrity, and availability—remain constant across projects. However, the procedures for implementing code scanning differ significantly from performing a network penetration test.
+
+To better grasp the dissimilarities in learning curves, consider this illustration comparing a back-end developer's trajectory with that of a security engineer:
+
+<Image src={developer_learning_curve} alt="" />
+
+<Image src={security_learning_curve} alt="" />
+
+Based on my personal experience, observations of colleagues, and interactions with them, beginners in the security field typically undergo distinct phases when embarking on their journey.
+
+### Impostor syndrome
+
+Impostor syndrome, a common experience for beginners across various fields, manifests as self-doubt and a persistent feeling of not belonging. Fortunately, with time and experience, it tends to dissipate. However, if you continue to grapple with feelings of fraudulence, consider discussing it with your manager or seeking guidance from a specialist who can aid you in overcoming this hurdle.
+
+### The Overachiever
+
+After navigating through the initial phase of adjusting to the security field, many security engineers find themselves entering the stage of "The Overachiever”.  Driven by the constant desire to excel and compensate for any gaps in their knowledge, these individuals will enter a relentless pursuit of acquiring expertise. It becomes a challenging cycle, as the more they learn, the more they realize how vast and ever-evolving the field of security is. The reality is that it’s impossible to know everything. This realization can initially be discouraging, leading to feelings of inadequacy. However, it is important to embrace the fact that security is a constantly evolving domain, and no single person can possess all the knowledge.
+
+### Mind shape analogy
+
+After a while, security engineers experience a profound shift in their mindset. Initially, their perspective may resemble that of a square-shaped mind, confined to traditional thinking patterns and limited awareness of security implications. However, as they delve deeper into the field, their minds begin to transform into a circle shape, representing a broader and more holistic view of security. This metamorphosis occurs as the brain adapts and incorporates the security mindset into everyday thinking processes.
+
+<Image src={mindset_analogy} alt="" />
+
+During this phase, security considerations become an integral part of every task and decision. Security is no longer an afterthought but an inherent aspect of their approach. The circle-shaped mind reflects the ability to proactively identify potential risks, anticipate threats, and implement preventive measures across various domains, including software development, infrastructure management, and data protection. It signifies a comprehensive understanding of the principles of confidentiality, integrity, and availability and how they intertwine with every aspect of an organization's operations.
+
+## Want to give it a try?
+
+Here are some resources I personally recommend if you wish to embark on this journey.
+
+1. [MIT Course: Computer Systems Security](https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/pages/lecture-notes/) offers a comprehensive course titled "6.858 Computer Systems Security." This course provides lecture notes and materials to deepen your understanding of computer systems security.
+2. [OWASP Top 10](https://owasp.org/www-project-top-ten/) is a regularly updated list of the most critical web application security risks. Familiarizing yourself with this list will enhance your awareness of common vulnerabilities and help you prioritize security concerns.
+3. [HackTheBox](https://www.hackthebox.com/) is an online platform that offers a range of realistic hacking challenges and virtual lab environments. It provides an interactive and hands-on approach to learning various security concepts and techniques. Visit their website to explore the available challenges and labs.
+4. [Learn Ethical Hacking from Scratch](https://www.udemy.com/course/learn-ethical-hacking-from-scratch/)  Udemy course covers the fundamentals of ethical hacking and guides you through practical exercises. You can enroll in this course on Udemy's website. If you are a student, you can apply for a discount.
+
+The security landscape is ever-evolving, and continuous learning is the key to success.You and I have yet to discover so many things about this fascinating fields. In the meantime, subscribe to my newsletter and stay updated on the latest insights and trends.
