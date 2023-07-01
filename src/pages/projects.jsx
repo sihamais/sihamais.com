@@ -9,7 +9,7 @@ const projects = [
   {
     name: 'Strugl',
     description:
-      'Strugl is a privacy-focused social media platform that prioritizes user confidentiality. With advanced encryption and stringent privacy controls, it ensures that user data and communications remain secure. Strugl empowers individuals to connect and share without compromising their privacy, allowing them to have full control over their personal information. By providing a safe and private digital space, Strugl allows users to express themselves freely without the fear of unauthorized access or data breaches. Join Strugl and experience a social media platform built on trust and privacy.',
+      'Strugl is a privacy-focused social media platform that prioritizes user confidentiality. By providing a safe and private digital space, Strugl allows users to express themselves freely without the fear of unauthorized access or data breaches. Join Strugl and experience a social media platform built on trust and privacy.',
     link: { href: 'https://github.com/pacokleitz/strugl', label: 'github.com' },
     logo: logoStrugl,
   },
