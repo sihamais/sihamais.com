@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoStrugl from '@/images/logos/strugl.svg'
+import fidelcly from '@/images/logos/fidelcly.svg'
 
 const projects = [
   {
@@ -12,7 +13,17 @@ const projects = [
       'Strugl is a privacy-focused social media platform that prioritizes user confidentiality. By providing a safe and private digital space, Strugl allows users to express themselves freely without the fear of unauthorized access or data breaches. Join Strugl and experience a social media platform built on trust and privacy.',
     link: { href: 'https://github.com/pacokleitz/strugl', label: 'github.com' },
     logo: logoStrugl,
-  },
+  },{
+    name: 'FidelCly',
+    description: 'An all-in-one loyalty app revolutionizing the shopping experience. Say goodbye to bulky loyalty cards as FIDELCLY consolidates all your cards into a single, user-friendly app. Gain insights through powerful analytics and unlock the potential of targeted marketing campaigns for shop owners.',
+    link: { href: 'https://github.com/FidelCly', label: 'github.com' },
+    logo: fidelcly,
+  },{
+    name: 'LitePlay',
+    description: 'Minimalist Ansible copycat.',
+    link: { href: 'https://github.com/sihamais/LitePlay', label: 'github.com'},
+    label: 'LP'
+  }
 ]
 
 function LinkIcon(props) {
@@ -47,12 +58,15 @@ export default function Projects() {
           {projects.map((project) => (
             <Card as="li" key={project.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
+                { project.logo && <Image
                   src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
+                  alt={project.name}
+                  className="h-11 w-11 rounded-full"
                   unoptimized
-                />
+                />}
+                { project.label && <span
+                  className="text-center font-medium text-md text-zinc-800 dark:text-zinc-100"
+                >{project.label}</span>}
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
