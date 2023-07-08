@@ -105,6 +105,7 @@ function SocialLink({ icon: Icon, ...props }) {
 function Newsletter() {
   return (
     <form
+      id="newsletter"
       action="/api/subscribe"
       method='post'
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
