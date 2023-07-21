@@ -15,7 +15,7 @@ const projects = [
     logo: logoStrugl,
   },{
     name: 'FidelCly',
-    description: 'An all-in-one loyalty app revolutionizing the shopping experience. Say goodbye to bulky loyalty cards as FIDELCLY consolidates all your cards into a single, user-friendly app. Gain insights through powerful analytics and unlock the potential of targeted marketing campaigns for shop owners.',
+    description: 'Revolutionizing the shopping experience by an all-in-one loyalty app, FIDELCLY, which consolidates all loyalty cards into a single, user-friendly application, eliminating the need for bulky physical cards. Shop owners can unlock the potential of targeted marketing campaigns and gain valuable insights through powerful analytics.',
     link: { href: 'https://github.com/FidelCly', label: 'github.com' },
     logo: fidelcly,
   },{
