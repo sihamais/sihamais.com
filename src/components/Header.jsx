@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import i18next from 'i18next'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
@@ -66,6 +67,18 @@ function MoonIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
+  )
+}
+
+function EnIcon(props) {
+  return (
+    <p {...props}>en</p>
+  )
+}
+
+function FrIcon(props) {
+  return (
+    <p {...props}>fr</p>
   )
 }
 
@@ -201,6 +214,29 @@ function ModeToggle() {
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
     </button>
   )
+}
+
+function LangToggle(){
+  function toggleLang() {
+    let language = i18next.language || window.localStorage.i18nextLng;
+    if (language === 'en'){
+      i18next.changeLanguage("fr")
+    } else {
+      i18next.changeLanguage("en")
+    }
+  }
+
+    return (
+    <button
+      type="button"
+      aria-label="Toggle dark mode"
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      onClick={toggleLang}
+    >
+      <p className="h-6 w-6 fill-zinc-100 text-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600">{i18next.language}</p>
+    </button>
+  )
+
 }
 
 function clamp(number, a, b) {
@@ -408,7 +444,10 @@ export function Header() {
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
+              <div className="flex justify-end gap-x-8 md:flex-1">
+                <div className="pointer-events-auto">
+                  <LangToggle />
+                </div>
                 <div className="pointer-events-auto">
                   <ModeToggle />
                 </div>

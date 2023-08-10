@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Analytics } from '@vercel/analytics/react';
+import { appWithTranslation } from 'next-i18next';
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
@@ -16,9 +17,8 @@ function usePrevious(value) {
   return ref.current
 }
 
-export default function App({ Component, pageProps, router }) {
+function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
-
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -37,3 +37,5 @@ export default function App({ Component, pageProps, router }) {
     </>
   )
 }
+
+export default appWithTranslation(App);

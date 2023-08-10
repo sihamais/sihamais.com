@@ -19,6 +19,8 @@ import logoScalingo from '@/images/logos/scalingo.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { useTranslation } from 'next-i18next';
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 function MailIcon(props) {
   return (
@@ -226,6 +228,8 @@ function Photos() {
 }
 
 export default function Home({ articles }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -240,10 +244,10 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software and security developer.
+            {t('index.title')}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Siham, a software and security developer based in Strasbourg, France.
+            {t('index.description')}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -277,13 +281,14 @@ export default function Home({ articles }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   if (process.env.NODE_ENV === 'production') {
     await generateRssFeed()
   }
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common', 'index'])),
       articles: (await getAllArticles())
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),

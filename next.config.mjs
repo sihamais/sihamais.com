@@ -11,6 +11,11 @@ const nextConfig = {
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+  },
+  react: { useSuspense: false },
 }
 
 const withMDX = nextMDX({

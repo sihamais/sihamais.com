@@ -1,0 +1,17 @@
+{
+  "pages": {
+    "index": {
+      "title": "Software and security engineer.",
+      "description": "I’m Siham, a software and security developer based in Strasbourg, France."
+    }
+  },
+  "components": {
+    "header": {
+      "nav": {
+        "about": "About",
+        "articles": "Articles",
+        "projects": "Projects"
+      }
+    }
+  }
+}
