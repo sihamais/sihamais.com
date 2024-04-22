@@ -1,397 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Resume - Siham Aissaoui</title>
-    <style>
-      img.emoji {
-        border-radius: 0;
-        float: none !important;
-        height: 1em;
-        width: 1em;
-        margin: 0 0.05em 0 0.1em;
-        vertical-align: -0.1em;
-      }
-      body {
-        padding: 48px;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-      }
-      .page-break {
-        margin: 2em 0;
-        border-bottom: 1px dashed #aaa;
-        border-top: 1px dashed #aaa;
-      }
-      .page-break:before {
-        color: #aaa;
-        content: 'Page Break';
-        display: block;
-        text-align: center;
-      }
-    </style>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i');
-      @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,500,500i,700,700i');
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        font-size: 8px;
-      }
-      body {
-        color: #222;
-        font-family: 'Lora', 'Noto Sans SC';
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1.7;
-        margin: auto;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: 'Raleway', 'Noto Sans SC';
-        font-weight: bold;
-      }
-      h1 {
-        font-size: 3.6rem;
-        font-weight: normal;
-        margin-top: 0;
-        text-align: left;
-      }
-      h2 {
-        font-size: 2.4rem;
-        margin-top: 1em;
-      }
-      h3 {
-        font-size: 2rem;
-        margin-top: 0.5em;
-      }
-      h4,
-      h5,
-      h6 {
-        font-size: 1.8rem;
-        margin-top: 0.4em;
-      }
-      b,
-      strong {
-        font-weight: bold;
-      }
-      i,
-      em {
-        font-style: italic;
-      }
-      ul,
-      ol {
-        margin-top: 0.5em;
-        list-style-type: none;
-      }
-      ul li:before,
-      ol li:before {
-        content: '-';
-        font-weight: bold;
-        margin-right: 0.5em;
-      }
-      h3 + ul {
-        margin-top: 0;
-      }
-      a {
-        color: #1abc9c;
-        text-decoration: underline;
-      }
-      code {
-        background-color: rgba(26, 188, 156, 0.25);
-        font-family: inherit;
-      }
-      pre {
-        font-family: inherit;
-      }
-      pre code {
-        display: block;
-      }
-      p {
-        margin-top: 0.5em;
-      }
-      p.pull-right {
-        float: right;
-        margin-right: 4px;
-        margin-top: -1.7em;
-        text-align: right;
-      }
-      h3 + p {
-        margin-top: 0.2em;
-      }
-      li > p {
-        margin-top: 0;
-      }
-      table {
-        margin-top: 0.5em;
-        table-layout: fixed;
-        width: 100%;
-      }
-      table th,
-      table tr {
-        font-weight: normal;
-      }
-      table.no-margin {
-        margin: 0 !important;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #ddd;
-        margin: 1em 0;
-      }
-      img {
-        border-radius: 4px;
-        float: left;
-        height: 10rem;
-        margin-right: 2rem;
-      }
-      ::-moz-selection {
-        background-color: rgba(26, 188, 156, 0.2);
-      }
-      ::selection {
-        background-color: rgba(26, 188, 156, 0.2);
-      }
-      .row.row--section {
-        display: flex;
-      }
-      .row.row--section .column.column--1-1 {
-        flex: 100%;
-      }
-      .row.row--section .column.column--1-2 {
-        flex: 66%;
-        padding-right: 3rem;
-      }
-      .row.row--section .column.column--2-2 {
-        flex: 34%;
-        padding-left: 3rem;
-      }
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 700;
-      }
-      h1 {
-        font-size: 3.6rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-      h2 {
-        letter-spacing: 2px;
-        padding-left: 40px;
-        position: relative;
-        text-transform: uppercase;
-      }
-      h2:before {
-        background-color: #1abc9c;
-        content: '';
-        height: 2px;
-        left: 0;
-        position: absolute;
-        width: 32px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      b,
-      strong {
-        font-weight: 700;
-      }
-      h1 b,
-      h1 strong {
-        font-weight: 800;
-      }
-      h2 b,
-      h2 strong,
-      h3 b,
-      h3 strong,
-      h4 b,
-      h4 strong,
-      h5 b,
-      h5 strong,
-      h6 b,
-      h6 strong {
-        font-weight: 800;
-      }
-      ul {
-        padding-left: 16px;
-      }
-      ul li {
-        list-style-type: none;
-        position: relative;
-      }
-      ul li:before {
-        background-color: #1abc9c;
-        content: '';
-        height: 0.4em;
-        left: -16px;
-        margin-left: 0.28284em;
-        position: absolute;
-        top: 0.56716em;
-        transform: rotate(45deg);
-        width: 0.4em;
-      }
-      a {
-        border-bottom: 1px solid #1abc9c;
-        color: #222;
-        text-decoration: none !important;
-      }
-      code {
-        background-color: rgba(26, 188, 156, 0.1) !important;
-        border-radius: 2px;
-        color: #0e6252;
-        font-family: 'Raleway';
-        font-weight: 500;
-        padding: 0 6px;
-      }
-    </style>
-  </head>
 
-  <body>
-    <div class="row row--section">
-      <div class="column column--1-1">
-        <h1><strong>Siham Aissaoui</strong></h1>
-        <h2>Work Experience</h2>
-        <h3>Scalingo</h3>
-        <p class="pull-right"><em>Strasbourg, France</em></p>
-        <p>
-          <strong>Cloud Security Engineer</strong>, <em>Infosec team</em>,
-          <em>Apprenticeship</em>
-        </p>
-        <p class="pull-right"><em>Sept 2021 - Oct 2023</em></p>
-        <ul>
-          <li>
-            <span>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Resume - Siham Aissaoui</title>
+  <style>
+    img.emoji {
+      border-radius: 0;
+      float: none !important;
+      height: 1em;
+      width: 1em;
+      margin: 0 0.05em 0 0.1em;
+      vertical-align: -0.1em;
+    }
+
+    body {
+      padding: 48px;
+    }
+
+    .page-break {
+      margin: 2em 0;
+      border-bottom: 1px dashed #aaa;
+      border-top: 1px dashed #aaa;
+    }
+
+    .page-break:before {
+      color: #aaa;
+      content: 'Page Break';
+      display: block;
+      text-align: center;
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i');
+    @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,500,500i,700,700i');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 8px;
+    }
+
+    body {
+      color: #222;
+      font-family: 'Lora', 'Noto Sans SC';
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.7;
+      margin: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Raleway', 'Noto Sans SC';
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      font-weight: normal;
+      margin-top: 0;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-top: 1em;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-top: 0.5em;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: 1.8rem;
+      margin-top: 0.4em;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    i,
+    em {
+      font-style: italic;
+    }
+
+    ul,
+    ol {
+      list-style-type: none;
+    }
+
+    ul li:before,
+    ol li:before {
+      content: '-';
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+
+    h3+ul {
+      margin-top: 0;
+    }
+
+    a {
+      color: #1abc9c;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: rgba(26, 188, 156, 0.25);
+      font-family: inherit;
+    }
+
+    pre {
+      font-family: inherit;
+    }
+
+    pre code {
+      display: block;
+    }
+
+    p {
+      margin-top: 0.5em;
+    }
+
+    p.pull-right {
+      float: right;
+      margin-right: 4px;
+      margin-top: -1.7em;
+      text-align: right;
+    }
+
+    h3+p {
+      margin-top: 0.2em;
+    }
+
+    li>p {
+      margin-top: 0;
+    }
+
+    table {
+      margin-top: 0.5em;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    table th,
+    table tr {
+      font-weight: normal;
+    }
+
+    table.no-margin {
+      margin: 0 !important;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 1em 0;
+    }
+
+    img {
+      border-radius: 4px;
+      float: left;
+      height: 10rem;
+      margin-right: 2rem;
+    }
+
+    ::-moz-selection {
+      background-color: rgba(26, 188, 156, 0.2);
+    }
+
+    ::selection {
+      background-color: rgba(26, 188, 156, 0.2);
+    }
+
+    .row.row--section {
+      display: flex;
+    }
+
+    .row.row--section .column.column--1-1 {
+      flex: 100%;
+    }
+
+    .row.row--section .column.column--1-2 {
+      flex: 66%;
+      padding-right: 3rem;
+    }
+
+    .row.row--section .column.column--2-2 {
+      flex: 34%;
+      padding-left: 3rem;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      letter-spacing: 2px;
+      padding-left: 40px;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    h2:before {
+      background-color: #1abc9c;
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    h1 b,
+    h1 strong {
+      font-weight: 800;
+    }
+
+    h2 b,
+    h2 strong,
+    h3 b,
+    h3 strong,
+    h4 b,
+    h4 strong,
+    h5 b,
+    h5 strong,
+    h6 b,
+    h6 strong {
+      font-weight: 800;
+    }
+
+    ul {
+      padding-left: 16px;
+    }
+
+    ul li {
+      list-style-type: none;
+      position: relative;
+      margin-top: 0.5em;
+    }
+
+    ul li:before {
+      background-color: #1abc9c;
+      content: '';
+      height: 0.4em;
+      left: -16px;
+      margin-left: 0.28284em;
+      position: absolute;
+      top: 0.56716em;
+      transform: rotate(45deg);
+      width: 0.4em;
+    }
+
+    ul li ul li {
+      margin-left: 10px;
+      margin-top: 0em;
+    }
+
+    ul li ul li:before {
+      background-color: #1abc9c;
+      content: '';
+      height: 0.4em;
+      left: -16px;
+      border-radius: 100%;
+      margin-left: 0.28284em;
+      position: absolute;
+      width: 0.4em;
+    }
+
+    a {
+      border-bottom: 1px solid #1abc9c;
+      color: #222;
+      text-decoration: none !important;
+    }
+
+    code {
+      background-color: rgba(26, 188, 156, 0.1) !important;
+      border-radius: 2px;
+      color: #0e6252;
+      font-family: 'Raleway';
+      font-weight: 500;
+      padding: 0 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row row--section">
+    <div class="column column--1-1">
+      <h1><strong>Siham Aissaoui</strong></h1>
+      <table>
+        <tbody>
+          <tr>
+            <td align="left">
+              Website:
+              <a href="https://sihamais.com" title="sihamais.com"><strong>sihamais.com</strong></a>
+            </td>
+            <td align="center">
+              Email:
+              <a href="mailto:sihamais@pm.me" title="sihamais@pm.me"><strong>sihamais@pm.me</strong></a>
+            </td>
+            <td align="right">
+              Linkedin:
+              <a href="https://linkedin.com/in/sihamais" title="linkedin.com/in/sihamais"><strong>@sihamais</strong></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+
+      <h2>Work Experience</h2>
+      <h3>Scalingo</h3>
+      <p class="pull-right"><em>(Remote) Strasbourg, France</em></p>
+      <p>
+        <strong>Cloud Security Engineer</strong>, <em>Infosec team</em>,
+        <em>Full time</em>
+      </p>
+      <p class="pull-right"><em>Nov 2023 - Present</em></p>
+      <ul>
+        <li>
+          <p>
+            Lead the shift left project to integrate DevSecOps tools early on the development lifecycle:
+          <ul>
+            <li>
+              <p>
+                Write project specifications to define the project scope and goals. Collect requirements from other
+                teams. Elaborate roadmap and milestones. Define the RACI matrix.
+              </p>
+            </li>
+            <li>
+              <p>
+                Benchmark market tools to find the best fit for the company's needs and SecNumCloud requirements.
+              </p>
+            </li>
+            <li>
+              <p>
+                Integrate tools in the CI/CD pipeline to scan the software components and assets on each commit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Assist developers in fixing the security issues and adopting the tools.
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Create and manage the security champions program to improve security processes and culture:
+          <ul>
+            <li>
+              <p>
+                Organize and animate weekly meetings to discuss security topics, monitor progress and share knowledge.
+              </p>
+            </li>
+            <li>
+              <p>
+                Revamp security review templates and procedures to be more developer-friendly and self-explanatory.
+              </p>
+            </li>
+            <li>
+              <p>
+                Document code best practices to be shared with the engineering team.
+              </p>
+            </li>
+            <li>
+              <p>
+                Create a suggestion box to collect feedback and ideas from engineers.
+              </p>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <span>
             <p>
-              Developed and adapted internal tools to reference the company's
-              software components and assets and audit their security on several
-              scopes (<a href="https://sihamais.com/articles/asgard" title="sihamais.com/articles/asgard">see Asgard article</a>).
+              Develop and adapt an internal tool to reference the company's laptops and audit their compliance on
+              several scopes:
             </p>
-            </span>
-          </li>
-          <li>
+          </span>
+          <ul>
+            <li>
+              <p>
+                Develop custom plugins on an open-source tool (<a href="https://github.com/CISOfy/lynis">Lynis</a>) to
+                monitor installed softwares (browser
+                extensions, IDE extensions, Linux/MacOS apps and repositories).
+              </p>
+            </li>
+            <li>
+              <p>
+                Develop and deploy an automated audit script on new and existing laptops using our MDMs.
+              </p>
+            </li>
+            <li>
+              <p>
+                Develop a custom dashboard to display the compliance status with fine-grained authorization levels and
+                security KPIs.
+              </p>
+            </li>
+          </ul>
+          <a href="https://sihamais.com/articles/lynis" title="sihamais.com/articles/lynis">Learn more about Laptop
+            Compliance on this article</a>.
+        </li>
+        <li>
+          <p>
+            Contribute to ISO 27001 and Health Data Hosting (HDS) qualifications renewal by maintaining internal
+            security
+            tools, writing
+            procedures and performing controls.
+          </p>
+        </li>
+        <li>
+          <p>
+            Handle security tickets on company's internal services and infrastructure.
+          </p>
+        </li>
+        <li>
+          <p>
+            Manage InfoSec's sprints by specifying user stories with estimations and prioritization.
+            Create and prepare sprint documentation and write external communication whithin the company.
+          </p>
+        </li>
+        <li>
+          <p>
+            Join the internal IT team to support the company's growth and handle new softwares requests.
+          </p>
+        </li>
+      </ul>
+      <p>
+        <strong>Cloud Security Engineer</strong>, <em>Infosec team</em>,
+        <em>Apprenticeship</em>
+      </p>
+      <p class="pull-right"><em>Sept 2021 - Oct 2023</em></p>
+      <ul>
+        <li>
+          <span>
             <p>
-              Contributed to ISO27001, HDS and SecNumCloud qualifications
-              gaining by undertaking various missions.
+              Develop a homemade tool (Asgard) to reference the company's
+              software components and audit their security on several
+              scopes:
             </p>
-          </li>
-          <li>
-            <p>
-              Conducted security audits and risk analysis on source code
-              changes.
-            </p>
-          </li>
-          <li>
-            <p>
-              Supported the engineering and product teams to achieve a shift
-              left policy.
-            </p>
-          </li>
-        </ul>
-        <h2>Education</h2>
-        <h3>Master of Science, Software Engineering</h3>
-        <p><strong>ETNA</strong>, <em>Paris, France</em></p>
-        <p class="pull-right"><em>2021 - 2023</em></p>
-        <h3>Bachelor of Computer Science</h3>
-        <p class="pull-right"><em>2018 - 2021</em></p>
-        <p>
-          <strong>University of Strasbourg</strong>, <em>Strasbourg, France</em>
-        </p>
-        <h2>Skills</h2>
-        <p>
-          Languages: <code>Typescript</code> <code>Go</code> <code>Ruby</code>
-          <code>C</code> <code>Python</code> <code>SQL</code> <code>Bash</code>
-        </p>
-        <p>
-          Frameworks: <code>Express</code> <code>NestJS</code> <code>Next.js</code>
-          <code>Ruby On Rails</code>
-        </p>
-        <p>
-          DevOps: <code>Docker</code> <code>Git</code> <code>CI/CD</code>
-          <code>Kubernetes</code> <code>Ansible</code>
-        </p>
-        <p>
-          Other: <code>Linux</code> <code>Rest API</code> <code>CLI</code>
-          <code>Agile</code> <code>OWASP</code> <code>EBIOS</code>
-          <code>gRPC</code> <code>Microservices</code>
-        </p>
-        <h2>Projects</h2>
-        <h3>Strugl</h3>
-        <p class="pull-right">
-          <code>Next.js</code> <code>Typescript</code> <code>Tailwind</code>
-          <code>Go</code> <code>PostgreSQL</code>
-        </p>
-        <p>
-          A simple social network, inspired by Twitter, using Go, Typescript,
-          and Next.js, containerized with Docker for seamless deployment.
-        </p>
-        <h3>FidelCly</h3>
-        <p class="pull-right">
-          <code>Nest.js</code> <code>Next.js</code> <code>gRPC</code>
-          <code>PostgreSQL</code> <code>Docker</code>
-          <code>Github Actions</code> <code>Scalingo</code>
-        </p>
-        <p>
-          Revolutionizing the shopping experience by an all-in-one loyalty app
-          which consolidates all loyalty cards into a single, user-friendly
-          application, eliminating the need for bulky physical cards. Shop
-          owners can unlock the potential of targeted marketing campaigns and
-          gain valuable insights through powerful analytics.
-        </p>
-        <h3>LitePlay</h3>
-        <p class="pull-right"><code>Python</code></p>
-        <p>
-          An efficient Ansible-inspired copycat for streamlined configuration
-          management, offering essential functionalities with minimal resource
-          consumption.
-        </p>
-        <hr />
-        <table>
-          <tbody>
-            <tr>
-              <td align="left">
-                Website:
-                <a href="https://sihamais.com" title="sihamais.com"
-                  ><strong>sihamais.com</strong></a
-                >
-              </td>
-              <td align="center">
-                Email:
-                <a href="mailto:sihamais@pm.me" title="sihamais@pm.me"
-                  ><strong>sihamais@pm.me</strong></a
-                >
-              </td>
-              <td align="right">
-                Linkedin:
-                <a
-                  href="https://linkedin.com/in/sihamais"
-                  title="linkedin.com/in/sihamais"
-                  ><strong>@sihamais</strong></a
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          </span>
+          <ul>
+            <li>
+              <p>
+                Write project specifications to define the project scope and goals. Collect requirements from other
+                teams.
+              </p>
+            </li>
+            <li>
+              <p>
+                Define configuration standards (branch protection rules, dependency scanning configuration,
+                staging/production branches drifts).
+              </p>
+            </li>
+            <li>
+              <p>
+                Develop a CLI to display the software components and their security status.
+              </p>
+            </li>
+          </ul>
+          <a href="https://sihamais.com/articles/asgard" title="sihamais.com/articles/asgard">Learn more about
+            Asgard on this article</a>.
+        </li>
+        <li>
+          <p>
+            Contribute to ISO 27001 and Health Data Hosting (HDS) qualifications gaining by undertaking various
+            missions.
+          </p>
+        </li>
+        <li>
+          <p>
+            Conduct security reviews and risk analysis on source code changes.
+          </p>
+        </li>
+        <li>
+          <p>
+            Support the engineering and product teams to achieve a shift
+            left policy.
+          </p>
+        </li>
+      </ul>
+      <h2>Skills</h2>
+      <p>
+        Languages: <code>Go</code> <code>Ruby</code> <code>Typescript</code>
+        <code>C</code> <code>Python</code> <code>SQL</code> <code>Bash</code>
+      </p>
+      <p>
+        Frameworks: <code>Ruby On Rails</code> <code>Express</code> <code>NestJS</code> <code>Next.js</code>
+      </p>
+      <p>
+        DevOps: <code>Docker</code> <code>Git</code> <code>CI/CD</code>
+        <code>Kubernetes</code> <code>Ansible</code>
+      </p>
+      <p>
+        Other: <code>Microservices</code> <code>OWASP</code> <code>Linux</code> <code>Rest API</code> <code>gRPC</code>
+        <code>Agile</code> <code>EBIOS</code>
+      </p>
+      <h2>Education</h2>
+      <h3>Master of Science, Software Engineering</h3>
+      <p><strong>ETNA</strong>, <em>Paris, France</em></p>
+      <p class="pull-right"><em>2021 - 2023</em></p>
+      <h3>Bachelor of Computer Science</h3>
+      <p class="pull-right"><em>2018 - 2021</em></p>
+      <p>
+        <strong>University of Strasbourg</strong>, <em>Strasbourg, France</em>
+      </p>
     </div>
+  </div>
 
-    <script src="cv1_fichiers/twemoji.min.js"></script>
-    <script>
-      twemoji.parse(document.body, {
-        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
-      })
-    </script>
-  </body>
+  <script src="cv1_fichiers/twemoji.min.js"></script>
+  <script>
+    twemoji.parse(document.body, {
+      base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+    })
+  </script>
+</body>
+
 </html>
