@@ -1,43 +1,53 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
 import Image from 'next/future/image'
-import castle from './castle-in-the-clouds.jpg'
-import architecture from './asgard_architecture.jpeg'
-import workflow from './asgard-workflow.jpeg'
+import japan from './japan.jpg'
+import workflow from './laptop-compliance-workflow.jpg'
+import admin from './laptop-compliance-admin.png'
+import hosts from './laptop-compliance-hosts.png'
+import catalog from './laptop-compliance-catalog.png'
+import cli from './lynis-cli.jpg'
 
 export const meta = {
   author: 'Siham Aissaoui',
   date: '2024-04-03',
   title: 'Automating Security at Scalingo #2: Laptop Compliance',
   description:
-    'Asgard, developed by Scalingo, is a cutting-edge platform that prioritizes "compliance-as-code" functionality. It revolutionizes the way software teams approach compliance by integrating it into their development processes. Asgard automates the enforcement and validation of compliance measures, ensuring that code repositories adhere to regulatory requirements.',
+    'Utilizing Lynis, Scalingo revolutionizes computer compliance by integrating it seamlessly into their operations. Lynis automates the evaluation of security configurations, streamlining processes and bolstering ISO 27001 compliance efforts while respecting employee privacy.',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
 **Original post:** [https://scalingo.com/blog/security-automation-laptop-compliance](https://scalingo.com/blog/security-automation-laptop-compliance)
 
-<Image src={castle} alt="" />
+<Image src={japan} alt="" />
 
-If you've been following our recent Scalingo articles on security, you've probably gathered that here at Scalingo, we love automating our security processes. When it comes to computer compliance specifically, it was the most obvious solution. Why? The answer lies in the rest of the article 👇.
+If you've been following our recent [Scalingo articles on security](https://scalingo.com/blog/tagged/security/page/1), you've probably gathered that here at Scalingo, we love automating our security processes. When it comes to computer compliance specifically, it was the most obvious solution. Why? The answer lies in the rest of the article 👇.
 
-Securing information involves not just safeguarding our systems but also ensuring the security of our workstations. A simple virus or a glitchy piece of software could jeopardize the work of our engineers or potentially leak confidential information. To counter this, we've set up a validation process for the applications installed on the laptops used by Scalingo employees. Controlling the configuration of workstations is also a requirement stipulated by the ISO 27001 certification that Scalingo successfully achieved.
-Why take on this project in the first place?
+Securing information involves not just safeguarding our systems but also ensuring the security of our workstations. A simple virus or a glitchy piece of software could jeopardize the work of our engineers or potentially leak confidential information. To counter this, we've set up a validation process for the applications installed on the laptops used by Scalingo employees. Controlling the configuration of workstations is also a requirement stipulated by the [ISO 27001 certification](https://scalingo.com/iso-27001-certification) that Scalingo successfully achieved.
+
+## Why take on this project in the first place?
 
 When we kicked off this initiative, we went for the simplest route available. Recognizing the inherent complexities of a developer's role — characterized by a plethora of tools and individual preferences — we devised a list of unauthorised tools, maintained on a spreadsheet, in alignment with the company's defined reference configuration. We evaluated the risks based on various criteria. At the same time, we embraced a more flexible stance, authorizing certain tools where the risk level was considered acceptable. This flexibility extended to browser extensions, code editor extensions, Linux and MacOS applications, Ubuntu source repositories, and similar elements. Following this, we requested all Scalingo employees give us a list of applications installed on their respective laptops. Can you pinpoint the vulnerability?
 
 As you might expect, this approach proved to be extremely time-consuming and not entirely reliable, given that humans often emerge as the weakest link in cybersecurity. Our objective was to streamline and improve this process by automating it, thereby reducing the time and resource costs associated with these computer compliance evaluations.
-How does it work?
 
-After a benchmarking phase, we settled on Lynis, an open-source tool designed for auditing systems, with a particular emphasis on security configurations. Its primary application is for Linux-based systems, such as servers or workstations.
+## How does it work?
 
-We were impressed by Lynis' flexibility, allowing us to customize the tests and controls conducted by the tool. The fact that the tool is open-source was also a plus, providing our employees with the ability to access the tool's code running on their machines at any time. However, Lynis was just one piece of the puzzle. We then needed to figure out a way to remotely install Lynis on our employees' laptops.
+After a benchmarking phase, we settled on [Lynis](https://github.com/CISOfy/lynis), an open-source tool designed for auditing systems, with a particular emphasis on security configurations. Its primary application is for Linux-based systems, such as servers or workstations.
 
-To streamline our compliance assessment on laptops, we decided to make use of our current Remote Monitoring and Management (RMM) infrastructure to remotely deploy bash scripts onto employees' laptops (1). These bash scripts were specifically designed to simplify the installation of Lynis, download concurrently developed custom plugins, and then carry out a system scan daily at a scheduled time (2).
+We were impressed by Lynis' **flexibility**, allowing us to customize the tests and controls conducted by the tool. The fact that the tool is **open-source** was also a plus, providing our employees with the ability to access the tool's code running on their machines at any time. However, Lynis was just one piece of the puzzle. We then needed to figure out a way to remotely install Lynis on our employees' laptops.
+
+<Image src={workflow} alt="Laptop Compliance Workflow" />
+
+To streamline our compliance assessment on laptops, we decided to make use of our current Remote Monitoring and Management (RMM) infrastructure to remotely deploy `bash` scripts onto employees' laptops (1). These `bash` scripts were specifically designed to simplify the installation of Lynis, download concurrently developed custom plugins, and then carry out a system scan daily at a scheduled time (2).
 
 Once the scan concludes, a report is generated, consolidating the audit results. This report is then sent over to our laptop compliance portal (3), a platform purpose-built for this particular task.
 
-Our deployment scripts undergo testing whenever possible. We use shellcheck for locally linting the bash scripts and in the continuous integration pipeline. For our Lynis plugins, we employ shellspec for unit testing. These tests ensure the conformity of each installed software type. For instance, concerning browser extensions, we meticulously examine each extension's files, extract metadata, and compare them against our database. This process is executed for all browsers used by our colleagues (Chrome, Firefox, Safari, etc.). Additionally, we ensure our plugins are cross-platform, meaning they operate on various operating systems, adapting to their functionalities.
+<Image src={cli} alt="Lynis Command Line Interface with Scalingo Plugins" />
 
+Our deployment scripts undergo testing whenever possible. We use `shellcheck` for locally linting the `bash` scripts and in the continuous integration pipeline. For our Lynis plugins, we employ `shellspec` for unit testing. These tests ensure the conformity of each installed software type. For instance, concerning browser extensions, we meticulously examine each extension's files, extract metadata, and compare them against our database. This process is executed for all browsers used by our colleagues (Chrome, Firefox, Safari, etc.). Additionally, we ensure our plugins are cross-platform, meaning they operate on various operating systems, adapting to their functionalities.
+
+```bash
 Register --test-no CUST-0040 --preqs-met ${PREQS_MET} --skip-reason "${SKIPREASON}" --weight L --network NO --category security --description "Check if browser extensions are valid"
 
     if [ "${SKIPTEST}" -eq 0 ]; then
@@ -63,24 +73,32 @@ Register --test-no CUST-0040 --preqs-met ${PREQS_MET} --skip-reason "${SKIPREASO
             done
         fi
     fi
+```
 
-Overview of the Custom Portal ✨
+## Overview of the Custom Portal ✨
 
 In our efforts to provide a straightforward and succinct overview of workstation compliance, we've put together a tailored dashboard. This enables users to quickly assess the compliance status of each workstation. With just a glance, they can confirm audit completion, review analysis results, and make any necessary corrections.
 
+<Image src={hosts} alt="Laptop Compliance Portal - Hosts" />
+
 Additionally, we have implemented an admin interface that allows administrators to check the compliance status of all laptops in the fleet. This interface provides a list of workstations with a summary of their compliance with security standards. It also displays a list of unauthorized and unverified applications reported by the laptop audit, enabling proactive measures to ensure the security and compliance of the working environment.
 
+<Image src={admin} alt="Laptop Compliance Portal - Admin" />
+
 Finally, the list of authorized software is now stored and maintained as csv files in our Lynis plugin repository. It serves as a database for the tests carried out by Lynis but also for information purposes in the authorized software page, accessible from the compliance portal.
-Final Outcomes
+
+<Image src={catalog} alt="Laptop Compliance Portal - Sofwatre Catalog" />
+
+## Final Outcomes
 
 The incorporation of Lynis has automated the previously laborious task of evaluating computer compliance. Assessments are now carried out systematically and consistently for each application, resulting in significant time savings. This has freed up valuable resources for the security team to concentrate on more critical tasks. Furthermore, this automation has bolstered security by promptly identifying non-compliant applications and facilitating a proactive response for rectification.
 
 The integration of Lynis has simplified the tracking of non-compliant laptops through the compliance portal, allowing for easy visualisation. Real-time monitoring has contributed to improved management of device compliance among employees. Additionally, the Lynis dashboard has highlighted the number of unverified applications, prompting the team to extend compliance checks to previously overlooked applications, thereby enhancing the overall security of the information system.
 
-The introduction of Lynis has empowered employees regarding compliance and security. Assessment results are presented transparently, enabling each employee to view the compliance status of their laptop and the applications in use. This heightened visibility has cultivated collective awareness of security, encouraging employees to actively contribute to safeguarding the information system by ensuring the compliance of their devices and applications.
+The introduction of Lynis has **empowered employees** regarding compliance and security. Assessment results are presented transparently, enabling each employee to view the compliance status of their laptop and the applications in use. This heightened visibility has cultivated collective awareness of security, encouraging employees to actively contribute to safeguarding the information system by **ensuring the compliance** of their devices and applications.
 
 However, the integration of this solution brought about challenges. It necessitated a cultural shift within the organization, involving the adaptation of practices and acceptance of new compliance and security methods. Implementation posed challenges in terms of execution, requiring an intensive research phase to gather crucial information for evaluating each type of software. Automated testing also presented difficulties, as replicating the exact deployment environment proved to be challenging.
 
-What about the personal data of our employees? Our solution allows us to audit laptop security without spying on our employees, and limits the retrieval of information to the applications themselves and not the activity they contain.
+**What about the personal data of our employees?** Our solution allows us to audit laptop security without spying on our employees, and limits the retrieval of information to the applications themselves and not the activity they contain.
 
 In summary: Was this solution worth it? YES!
